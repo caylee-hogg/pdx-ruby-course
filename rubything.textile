@@ -4,25 +4,44 @@
 
 h1. Outline of the Day
 
-h1. Programming & Web Development
-reasons why knowing this is important - slide might be optional given
-the fact that this is a less noob group
+
+h1. What is programming?
+
+* Programming is the act of writing programs
+* A program is just text
+* A program is a precise description of how to perform a *computation* on *data*
+* Data
+** Numbers
+** Strings: pieces of text
+** Lists of things
+* Computations
+** Add 3 and 4
+** Find the largest number in a list of numbers
+** Contact Trimet's network and find the most convenient bus route
+
+h1. What is a programming language?
+
+* A human readable format for describing computations
+* Compilers or interpreters convert human-readable to machine-readable
+* Any language can describe the same computations
+* Different languages are really just different vocabulary 
+* Different vocabulary means a difference in ease of expressing an idea
+
+h1. Why Ruby?
+
+* Easy to learn
+* Strong community in Portland
+* Rails gives Ruby a good vocabulary for building web development
 
 h1. Introduction To Ruby
 (what not to write: Ruby is a dynamically typed language!)
 
-h1. Why Ruby?
-Insert reasons to learn Ruby here, e.g.
-* Widespread
-* Easy to learn
-* Easy to deploy
-* Rails
-* Strong local community
-
 h1. Why Rails?
+
 durr?
 
 h1. Starting Ruby
+
 instructions to start irb, a couple of words on how to navigate it?
 Cute tricks, pitfalls?
 
@@ -30,6 +49,10 @@ Cute tricks, pitfalls?
 % do with respect to TryRuby. We can't, in some sense, just have people follow
 % along at home because there's all sorts of cute stuff it does with an
 % that we can't just replicate easily
+
+h1. Ruby expressions
+
+* A line of Ruby that expresses 
 
 h1. Your First Ruby Program
 
@@ -54,6 +77,8 @@ h1. Classes
 
 Classes classifying objects. Describe the data and methods that can be
 applied to them. (note that we're not getting into modules or mixins this weekend) Describe how to make a class, provide examples.
+
+h1. Hashes
 
 h1. Koans
 
