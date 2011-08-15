@@ -1,0 +1,85 @@
+% README
+% THESE SLIDES ARE NOT GOOD - JUST A REALLY SILLY VERBOSE ROUGH DRAFT
+% LET'S RIP THEM APART TO MAKE SOMETHING BETTER
+
+h1. Outline of the Day
+
+h1. Programming & Web Development
+reasons why knowing this is important - slide might be optional given
+the fact that this is a less noob group
+
+h1. Introduction To Ruby
+(what not to write: Ruby is a dynamically typed language!)
+
+h1. Why Ruby?
+Insert reasons to learn Ruby here, e.g.
+* Widespread
+* Easy to learn
+* Easy to deploy
+* Rails
+* Strong local community
+
+h1. Why Rails?
+durr?
+
+h1. Starting Ruby
+instructions to start irb, a couple of words on how to navigate it?
+Cute tricks, pitfalls?
+
+% Okay, so one thing we need to do here is figure out just exactly what we'll
+% do with respect to TryRuby. We can't, in some sense, just have people follow
+% along at home because there's all sorts of cute stuff it does with an
+% that we can't just replicate easily
+
+h1. Your First Ruby Program
+
+h1. (more intro to ruby slides?)
+
+Not sure what needs to go here just yet. More simple walthrough examples
+of syntax, very monkey-see/monkey-do to begin with, explaining only what
+we need
+
+h1. Objects
+Ruby is "object-oriented". A fancy way of saying that everything you can
+manipulate in Ruby has both data stored in it and computations, called methods,
+that can manipulate that data.
+
+For example, "puppy" is a String and .reverse is a method that can reverse a
+string - hence "puppy".reverse returns "yppup"
+
+Need a table of examples here, perhaps. What things are Objects?
+
+h1. Classes
+Classes classifying objects. Describe the data and methods that can be
+applied to them. (note that we're not getting into modules or mixins this weekend) Describe how to make a class, provide examples.
+
+h1. Koans
+(Addie should write what she wants here)
+
+h1. Intro To Rails
+(Give a more technical description of what Rails does: a system for generating
+and handling classes to represent the data of your webapp)
+
+h1. An Example Rails App
+(directions for how to run this application and what to do with it as
+examples - need a script for manipulating it in the web browser.
+Need examples of 
+# Viewing data
+# Creating data
+# Modifying data
+# Destroying data
+End with the Gospel(in the old German sense) of Rails: much of the code
+needed to do those things can automatically be created by rails
+)
+
+h1. Rails console examples
+So here we need probably 5-10 slides of rails for zombies like examples of how
+this should all work
+h1. Cont.
+h1. Cont.
+h1. Cont.
+h1. Cont.
+h1. Cont.
+
+h1. The code behind the curtain
+how to use scaffolding
