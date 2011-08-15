@@ -14,6 +14,7 @@ h1. What is programming?
 ** Numbers
 ** Strings: pieces of text
 ** Lists of things
+** Booleans: true and false
 * Computations
 ** Add 3 and 4
 ** Find the largest number in a list of numbers
@@ -31,14 +32,7 @@ h1. Why Ruby?
 
 * Easy to learn
 * Strong community in Portland
-* Rails gives Ruby a good vocabulary for building web development
-
-h1. Introduction To Ruby
-(what not to write: Ruby is a dynamically typed language!)
-
-h1. Why Rails?
-
-durr?
+* Rails gives Ruby a good, simple, vocabulary for web development
 
 h1. Starting Ruby
 
@@ -50,11 +44,77 @@ Cute tricks, pitfalls?
 % along at home because there's all sorts of cute stuff it does with an
 % that we can't just replicate easily
 
-h1. Ruby expressions
+h1. Basic Ruby Data
 
-* A line of Ruby that expresses 
+|Numbers | @1@, @2@, @3@|
+|Strings | @"chicken"@ |
+|Booleans| @true@, @false@|
+|Symbols | @:chicken@ |
+|Arrays | @[1 , 7, "cake"]@|
+|Hashes  | @{:chicken => "chicken", :sillyexample => :chicken}@|
 
-h1. Your First Ruby Program
+type these at the command line! What happens? 
+
+That's the data, where are the computations?
+
+h1. Basic Ruby Computations
+
+| @2 + 2@ | |
+| @3 * 3@ | |
+| @"chicken".reverse@ | |
+| @"chicken".length@  | |
+| @2 + 2 == 4@ | |
+| @2 + 2 == 5@ | |
+
+h1. Basic Ruby Computations
+
+| @2 + 2@ | @4@ |
+| @3 * 3@ | |
+| @"chicken".reverse@ | |
+| @"chicken".length@  | |
+| @2 + 2 == 4@ | |
+| @2 + 2 == 5@ | |
+
+
+h1. Basic Ruby Computations
+
+| @2 + 2@ | @4@ |
+| @3 * 3@ | @9@ |
+| @"chicken".reverse@ | |
+| @"chicken".length@  | |
+| @2 + 2 == 4@ | |
+| @2 + 2 == 5@ | |
+
+
+h1. Basic Ruby Computations
+
+| @2 + 2@ | @4@ |
+| @3 * 3@ | @9@ |
+| @"chicken".reverse@ | @"nekcihc"@ |
+| @"chicken".length@  | |
+| @2 + 2 == 4@ | |
+| @2 + 2 == 5@ | |
+
+
+h1. Basic Ruby Computations
+
+| @2 + 2@ | @4@ |
+| @3 * 3@ | @9@ |
+| @"chicken".reverse@ | @"nekcihc"@ |
+| @"chicken".length@  | @7@ |
+| @2 + 2 == 4@ | @true@ |
+| @2 + 2 == 5@ | |
+
+
+h1. Basic Ruby Computations
+
+| @2 + 2@ | @4@ |
+| @3 * 3@ | @9@ |
+| @"chicken".reverse@ | @"nekcihc"@ |
+| @"chicken".length@  | @7@ |
+| @2 + 2 == 4@ | @true@ |
+| @2 + 2 == 5@ | @false@ |
+
 
 h1. (more intro to ruby slides?)
 
