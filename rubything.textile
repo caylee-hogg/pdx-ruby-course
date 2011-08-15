@@ -82,4 +82,12 @@ h1. Cont.
 h1. Cont.
 
 h1. The code behind the curtain
-how to use scaffolding
+how to use scaffolding - should be a step by step guide of how we made this
+and explaining what the commands are doing. I'm guessing quite a few slides
+will go here.
+
+h1. Wrap-up
+What we learned, summarized in a few slides
+
+h1. Stepping outside
+(Reid will talk about the wider ecosystem and what to expect, etc.)
