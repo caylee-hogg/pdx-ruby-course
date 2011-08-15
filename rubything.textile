@@ -40,6 +40,7 @@ of syntax, very monkey-see/monkey-do to begin with, explaining only what
 we need
 
 h1. Objects
+
 Ruby is "object-oriented". A fancy way of saying that everything you can
 manipulate in Ruby has both data stored in it and computations, called methods,
 that can manipulate that data.
@@ -50,17 +51,21 @@ string - hence "puppy".reverse returns "yppup"
 Need a table of examples here, perhaps. What things are Objects?
 
 h1. Classes
+
 Classes classifying objects. Describe the data and methods that can be
 applied to them. (note that we're not getting into modules or mixins this weekend) Describe how to make a class, provide examples.
 
 h1. Koans
+
 (Addie should write what she wants here)
 
 h1. Intro To Rails
+
 (Give a more technical description of what Rails does: a system for generating
 and handling classes to represent the data of your webapp)
 
 h1. An Example Rails App
+
 (directions for how to run this application and what to do with it as
 examples - need a script for manipulating it in the web browser.
 Need examples of 
@@ -73,21 +78,30 @@ needed to do those things can automatically be created by rails
 )
 
 h1. Rails console examples
+
 So here we need probably 5-10 slides of rails for zombies like examples of how
 this should all work
+
 h1. Cont.
+
 h1. Cont.
+
 h1. Cont.
+
 h1. Cont.
+
 h1. Cont.
 
 h1. The code behind the curtain
+
 how to use scaffolding - should be a step by step guide of how we made this
 and explaining what the commands are doing. I'm guessing quite a few slides
 will go here.
 
 h1. Wrap-up
+
 What we learned, summarized in a few slides
 
 h1. Stepping outside
+
 (Reid will talk about the wider ecosystem and what to expect, etc.)
