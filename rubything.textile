@@ -23,21 +23,26 @@ h1. What is programming?
 h1. What is a programming language?
 
 * A human readable format for describing computations
-* Compilers or interpreters convert human-readable to machine-readable
+* Compilers or interpreters convert human-readable text to machine-readable
 * Any language can describe the same computations
-* Different languages are really just different vocabulary 
-* Different vocabulary means a difference in ease of expressing an idea
+* Different languages are really just a different vocabulary
+* Different vocabularies offer different ways of expressing an idea: like human languages, each programming language makes some things easy to "say" and some things harder
 
 h1. Why Ruby?
 
-* Easy to learn
-* Strong community in Portland
+* It's easy to learn
+* Portland has a strong Ruby community
 * Rails gives Ruby a good, simple, vocabulary for web development
 
 h1. Starting Ruby
 
-instructions to start irb, a couple of words on how to navigate it?
-Cute tricks, pitfalls?
+Open a terminal window. Type "irb" and hit enter.
+
+Try entering a few things: @1@, @1 + 1@, @"1"@, @(0...15).each { |i| puts i }@
+
+@>>@ is your prompt to enter text and @=>@ will appear at the start of each response.
+
+Use your arrow keys to navigate back and forth through the previous commands you've entered.
 
 % Okay, so one thing we need to do here is figure out just exactly what we'll
 % do with respect to TryRuby. We can't, in some sense, just have people follow
