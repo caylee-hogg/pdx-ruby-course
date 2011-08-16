@@ -201,26 +201,44 @@ h1. Let's Try Something
 
 What happens?
 
-h1. @NoMethodError@
+h1. Let's Try Something
 
-@reverse@ isn't defined for numbers
+@40.reverse@
+
+What happens?
+
+Ruby just reported a @NoMethodError@
+
+That means that @reverse@ is not defined for the number 40.
+
+Computations in Ruby are performed by *methods*.
+Type @40.methods@ to see which methods are available for basic numbers.
+
+Notice @+@, @-@, et al. in the list? 
+
+What about @"chicken".methods@?
 
 h1. Objects
 
-Ruby is "object-oriented". A fancy way of saying that everything you can
-manipulate in Ruby has both data stored in it and computations, called methods,
-that can manipulate that data.
+An object is a piece of data along with the methods, computations, that
+can operate on it.
 
-For example, "puppy" is a String and .reverse is a method that can reverse a
-string - hence "puppy".reverse returns "yppup"
+Everything in Ruby is an object: numbers, strings, hashes, etc.
 
-Need a table of examples here, perhaps. What things are Objects?
+How do you know what kind of object something is? Ask!
+
+@40.class@
+
+What *is* a class?
 
 h1. Classes & Methods
 
 h2. Classes
-* Classes classifying objects. 
-* Describe data and methods
+* Classes classifying objects 
+** All numbers can be added
+** All strings can be reversed
+* Define kinds of data and methods on that data
+* Templates for making objects
 
 Let's learn the syntax by example
 
