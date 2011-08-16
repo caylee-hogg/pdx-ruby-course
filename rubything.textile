@@ -125,12 +125,12 @@ h1. That's Nice But...
 * @var1 = 4@, @var2 = "chicken"@
 
 Try typing the following, noting what happens at each step 
-bc.
-@thing = "chicken"@
-@thing@
-@thing.reverse@
-@thing@
-@thing = thing.reverse@
+
+bc. thing = "chicken"
+thing
+thing.reverse
+thing
+thing = thing.reverse
 
 h1. Changing variables
 
@@ -139,10 +139,10 @@ h1. Changing variables
 * Some functions do change state
 
 Try 
-bc.
-@awesomelist = [5,2,1,8]@
-@awesomelist.sort!@
-@awesomelist@
+
+bc. awesomelist = [5,2,1,8]
+awesomelist.sort!
+awesomelist
 
 How did that happen? Actions that end with a @!@ *change* the data!
 A programming convention, but a good one to follow.
@@ -155,8 +155,8 @@ Let's consider a book rating system:
 * We'll store all this data in a hash
 
 Fill in a hash with some books, e.g.
-bc. 
-books = {"Left Hand of Darkness" => 5, 
+
+bc. books = {"Left Hand of Darkness" => 5, 
          "The Word for World Is Forest" => 5,
          "Nevermind the Pollacks" => 0,
          "Only Revolutions" => :notfinished}
@@ -183,10 +183,23 @@ string - hence "puppy".reverse returns "yppup"
 
 Need a table of examples here, perhaps. What things are Objects?
 
-h1. Classes
+h1. Classes & Methods
 
-Classes classifying objects. Describe the data and methods that can be
-applied to them. (note that we're not getting into modules or mixins this weekend) Describe how to make a class, provide examples.
+h2. Classes
+* Classes classifying objects. 
+* Describe data and methods
+
+Let's learn the syntax by example
+
+bc. class Counter 
+  @value
+  def new
+    @value = 0
+  end
+  def increment
+    @value = @value + 1
+  end
+end
 
 h1. Blocks
 
