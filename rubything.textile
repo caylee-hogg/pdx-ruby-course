@@ -258,8 +258,7 @@ h1. Classes
 
 Let's use our Counter class
 
-bc.
-count = new Counter
+bc. count = new Counter
 count.increment
 count.increment
 count.class
@@ -267,12 +266,38 @@ count.methods
 
 With @count.methods@, what did you see?
 
+h1. Classes
+
+Can add methods to existing classes as well
+
+bc. class String
+  def chicken?
+    self == chicken?
+  end
+end
+"chicken".chicken?
+"puppy".chicken?
+
+@self@ is a way of referring to the object that the method is being called on
+
+h1. Classes Exercise
+
+Add a method to String that will test to see if a string is a palindrome.
+
+A palindrome is any string that is the same read forwards or backwards.
+
+To get you started type the following at the command line:
+
+bc. class String
+  def palindrome?
+
+and finish the rest! Test it on @"abba".palindrome?@ and @"puppy".palindrome?@
+
 h1. Learn more about common Ruby classes
 
 "http://rubydoc.info/stdlib/core/":http://rubydoc.info/stdlib/core
 
 Good places to start: Array, Enumerable, Fixnum, Float, Hash, NilClass, String, Time
-
 
 h1. Blocks
 
