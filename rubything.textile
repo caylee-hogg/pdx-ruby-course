@@ -236,13 +236,16 @@ What *is* a class?
 h1. Classes & Methods
 
 h2. Classes
-* Classes classifying objects 
+* Classes create different types of objects
 ** All numbers can be added
 ** All strings can be reversed
-* Define kinds of data and methods on that data
-* Templates for making objects
+* They define kinds of data and methods on that data
+* Classes are templates for making objects
 
-Let's learn the syntax by example
+
+h1. Classes & Methods
+
+Let's learn the syntax by example:
 
 bc. class Counter 
   @value
@@ -256,7 +259,7 @@ end
 
 h1. Classes
 
-Let's use our Counter class
+Let's use our Counter class:
 
 bc. count = new Counter
 count.increment
@@ -268,7 +271,7 @@ With @count.methods@, what did you see?
 
 h1. Classes
 
-Can add methods to existing classes as well
+You can add methods to existing classes as well:
 
 bc. class String
   def chicken?
@@ -304,16 +307,18 @@ Good places to start: Array, Enumerable, Fixnum, Float, Hash, NilClass, String, 
 h1. Blocks
 
 * A *block* is a computation, but *not* a method
-* A block is of the form @{|arg1, arg2, ..| code}@
-* @{|v| v.palindrome?}
-* @{|x, y| x * y}
+* A block is of the form @{ |arg1, arg2, ..| code }@
+* @{ |v| v.palindrome? }
+* @{ |x, y| x * y }
 
 Some methods take blocks.
 
 @list.each {|p| code}@ runs @code@ on every element of @list@
 
 bc. list = [1,2,3,4]
-list.each {|n| n + 1}
+list.each { |n| n + 1 }
+
+h1. Blocks
 
 A more complicated example of using each:
 
