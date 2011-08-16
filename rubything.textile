@@ -115,12 +115,62 @@ h1. Basic Ruby Computations
 | @2 + 2 == 4@ | @true@ |
 | @2 + 2 == 5@ | @false@ |
 
+What do you think @"chicken".reverse.length@ does?
 
-h1. (more intro to ruby slides?)
 
-Not sure what needs to go here just yet. More simple walthrough examples
-of syntax, very monkey-see/monkey-do to begin with, explaining only what
-we need
+h1. That's Nice But...
+
+* How do we chain together steps or use the result of an action?
+* Variables name particular values
+* @var1 = 4@, @var2 = "chicken"@
+
+Try typing the following, noting what happens at each step 
+bc.
+@thing = "chicken"@
+@thing@
+@thing.reverse@
+@thing@
+@thing = thing.reverse@
+
+h1. Changing variables
+
+* @thing.reverse@ didn't permanently reverse the string!
+* Had to *set* the value with another assignment statement
+* Some functions do change state
+
+Try 
+bc.
+@awesomelist = [5,2,1,8]@
+@awesomelist.sort!@
+@awesomelist@
+
+How did that happen? Actions that end with a @!@ *change* the data!
+A programming convention, but a good one to follow.
+
+h1. Hashes
+
+Let's consider a book rating system: 
+* We use numeric values 0-5 to represent a book that you've read
+* :notfinished will represent a book that you haven't finished
+* We'll store all this data in a hash
+
+Fill in a hash with some books, e.g.
+bc. 
+books = {"Left Hand of Darkness" => 5, 
+         "The Word for World Is Forest" => 5,
+         "Nevermind the Pollacks" => 0,
+         "Only Revolutions" => :notfinished}
+
+h1. Let's Try Something
+
+@40.reverse@
+
+What happens?
+
+h1. @NoMethodError@
+
+@reverse@ isn't defined for numbers
+
 
 h1. Objects
 
@@ -138,7 +188,9 @@ h1. Classes
 Classes classifying objects. Describe the data and methods that can be
 applied to them. (note that we're not getting into modules or mixins this weekend) Describe how to make a class, provide examples.
 
-h1. Hashes
+h1. Blocks
+
+h1. Control Structures
 
 h1. Koans
 
