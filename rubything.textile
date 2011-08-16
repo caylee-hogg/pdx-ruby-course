@@ -327,6 +327,43 @@ reviews
 
 h1. Control Structures
 
+Ruby provides control structures for writing more complicated code
+
+If statements are a switch on whether the argument is true or false.
+
+bc. if true
+     then 1
+     else 2
+    end
+
+bc. if false
+     then 1
+     else 2
+    end
+
+h1. Control Structures
+
+While statements allow repetition:
+
+bc. i = 0
+c = new Counter
+while i < 10
+  c.increment
+  i = i + 1
+end
+c.@value
+
+h1. Control Structures
+
+For-in statements allow iteration over a structure such as a list
+
+bc. list = [1,2,3,4,5]
+sum = 0
+for n in list
+  sum = sum + n
+end
+sum
+
 h1. Koans
 
 (Addie should write what she wants here)
