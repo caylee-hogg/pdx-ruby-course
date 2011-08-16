@@ -376,7 +376,7 @@ while i < 10
   c.increment
   i = i + 1
 end
-c.@value
+c.value
 
 h1. Control Structures
 
