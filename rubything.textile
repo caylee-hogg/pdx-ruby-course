@@ -252,6 +252,13 @@ bc. class Counter
   end
 end
 
+h1. Learn more about common Ruby classes
+
+"http://rubydoc.info/stdlib/core/":http://rubydoc.info/stdlib/core
+
+Good places to start: Array, Enumerable, Fixnum, Float, Hash, NilClass, String, Time
+
+
 h1. Blocks
 
 h1. Control Structures
