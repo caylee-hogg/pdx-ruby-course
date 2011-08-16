@@ -385,8 +385,8 @@ h1. Koans
 
 h1. Intro To Rails
 
-(Give a more technical description of what Rails does: a system for generating
-and handling classes to represent the data of your webapp)
+* Rails is a library for building and deploying web applications
+* ???
 
 h1. An Example Rails App
 
