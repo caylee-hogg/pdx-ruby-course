@@ -254,6 +254,19 @@ bc. class Counter
   end
 end
 
+h1. Classes
+
+Let's use our Counter class
+
+bc.
+count = new Counter
+count.increment
+count.increment
+count.class
+count.methods
+
+With @count.methods@, what did you see?
+
 h1. Learn more about common Ruby classes
 
 "http://rubydoc.info/stdlib/core/":http://rubydoc.info/stdlib/core
