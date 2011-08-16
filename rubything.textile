@@ -201,7 +201,7 @@ h1. Let's Try Something
 
 What happens?
 
-h1. @NoMethodError@
+h1. @NoMethodError: undefined method `reverse' for 40:Fixnum@
 
 @reverse@ isn't defined for numbers
 
