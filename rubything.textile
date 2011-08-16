@@ -58,7 +58,7 @@ h1. Basic Ruby Data
 |Arrays | @[1 , 7, "cake"]@|
 |Hashes  | @{:chicken => "chicken", :sillyexample => :chicken}@|
 
-type these at the command line! What happens? 
+Type these at the command line! What happens?
 
 That's the data, where are the computations?
 
@@ -150,7 +150,7 @@ awesomelist.sort!
 awesomelist
 
 How did that happen? Actions that end with a @!@ *change* the data!
-A programming convention, but a good one to follow.
+This is a programming convention, but a good one to follow.
 
 h1. Hashes
 
@@ -161,20 +161,20 @@ Let's consider a book rating system:
 
 Fill in a hash with some books, e.g.
 
-bc. books = {"Left Hand of Darkness" => 5, 
-         "The Word for World Is Forest" => 5,
-         "Nevermind the Pollacks" => 0,
-         "Only Revolutions" => :notfinished}
+bc. books = { "Left Hand of Darkness"        => 5,
+          "The Word for World Is Forest" => 5,
+          "Nevermind the Pollacks"       => 0,
+          "Only Revolutions"             => :not_finished }
 
 h1. Hashes
 
 We can retrieve the rating for a particular book like so
 
-@books["Left Hand of Darkness"]
+@books["Left Hand of Darkness"]@
 
 We can also *set* values like so
 
-@books["Only Revolutions" => 3]
+@books["Only Revolutions"] = 3@
 
 How can we add a rating for a new book? Any guesses?
 
@@ -183,17 +183,17 @@ h1. Hashes
 
 We can retrieve the rating for a particular book like so
 
-@books["Left Hand of Darkness"]
+@books["Left Hand of Darkness"]@
 
 We can also *set* values like so
 
-@books["Only Revolutions" => 3]
+@books["Only Revolutions"] = 3@
 
 How can we add a rating for a new book? Any guesses?
 
 We set the value of the book just like before!
 
-@books["White Teeth" => 4]
+@books["White Teeth"] = 4@
 
 h1. Let's Try Something
 
@@ -207,7 +207,7 @@ h1. Let's Try Something
 
 What happens?
 
-Ruby just reported a @NoMethodError@
+Ruby just reported @NoMethodError: undefined method `reverse' for 40:Fixnum@
 
 That means that @reverse@ is not defined for the number 40.
 
