@@ -323,12 +323,22 @@ h1. Blocks
 A more complicated example of using each:
 
 bc. reviews = Hash.new(0)
-reviews = books.values.each {|rate| reviews[rate] = review[rate] + 1}
+books.values.each { |rate| reviews[rate] = reviews[rate] + 1 }
 reviews
 
 @reviews@ is a count of how many reviews you gave with a particular rating
 
 @reviews[5]@
+
+h1. Blocks
+
+There's another way to write blocks. This is commonly used for multi-line expressions.
+
+bc. reviews = Hash.new(0)
+books.values.each do |rate|
+  reviews[rate] = reviews[rate] + 1
+  # more code can go here...
+end
 
 h1. Control Structures
 
