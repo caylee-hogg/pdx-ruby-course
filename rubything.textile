@@ -70,7 +70,7 @@ h1. Basic Ruby Computations
 | @"chicken".length@  | |
 | @2 + 2 == 4@ | |
 | @2 + 2 == 5@ | |
-| @[1 , 2, 3].contains(2)@ | | |
+| @[1 , 2, 3].include?(2)@ | | |
 
 h1. Basic Ruby Computations
 
@@ -80,7 +80,7 @@ h1. Basic Ruby Computations
 | @"chicken".length@  | |
 | @2 + 2 == 4@ | |
 | @2 + 2 == 5@ | |
-| @[1 , 2, 3].contains(2)@ | | |
+| @[1 , 2, 3].include?(2)@ | | |
 
 h1. Basic Ruby Computations
 
@@ -90,7 +90,7 @@ h1. Basic Ruby Computations
 | @"chicken".length@  | |
 | @2 + 2 == 4@ | |
 | @2 + 2 == 5@ | |
-| @[1 , 2, 3].contains(2)@ | | |
+| @[1 , 2, 3].include?(2)@ | | |
 
 h1. Basic Ruby Computations
 
@@ -100,7 +100,7 @@ h1. Basic Ruby Computations
 | @"chicken".length@  | |
 | @2 + 2 == 4@ | |
 | @2 + 2 == 5@ | |
-| @[1 , 2, 3].contains(2)@ | | |
+| @[1 , 2, 3].include?(2)@ | | |
 
 h1. Basic Ruby Computations
 
@@ -110,7 +110,7 @@ h1. Basic Ruby Computations
 | @"chicken".length@  | @7@ |
 | @2 + 2 == 4@ | @true@ |
 | @2 + 2 == 5@ | |
-| @[1 , 2, 3].contains(2)@ | | |
+| @[1 , 2, 3].include?(2)@ | | |
 
 h1. Basic Ruby Computations
 
@@ -120,10 +120,10 @@ h1. Basic Ruby Computations
 | @"chicken".length@  | @7@ |
 | @2 + 2 == 4@ | @true@ |
 | @2 + 2 == 5@ | @false@ |
-| @[1 , 2, 3].contains(2)@ | | @true@ |
+| @[1 , 2, 3].include?(2)@ | | @true@ |
 
 What do you think @"chicken".reverse.length@ does?
-
+What about @"puppy".include?('p')@?
 
 h1. That's Nice But...
 
