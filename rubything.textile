@@ -318,7 +318,7 @@ list.each {|n| n + 1}
 A more complicated example of using each:
 
 bc. reviews = Hash.new(0)
-reviews = books.values.each {|rate| reviews[rate] = review[rate] + 1}
+books.values.each {|rate| reviews[rate] = review[rate] + 1}
 reviews
 
 @reviews@ is a count of how many reviews you gave with a particular rating
@@ -370,8 +370,8 @@ h1. Koans
 
 h1. Intro To Rails
 
-(Give a more technical description of what Rails does: a system for generating
-and handling classes to represent the data of your webapp)
+* Rails is a library for building and deploying web applications
+* ???
 
 h1. An Example Rails App
 
