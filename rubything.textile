@@ -213,7 +213,7 @@ Ruby just reported @NoMethodError: undefined method `reverse' for 40:Fixnum@
 
 That means that @reverse@ is not defined for the number 40.
 
-Computations in Ruby are performed by *methods*.
+Most computations in Ruby are performed by *methods*.
 Type @40.methods@ to see which methods are available for basic numbers.
 
 Notice @+@, @-@, et al. in the list? 
@@ -278,7 +278,9 @@ end
 "chicken".chicken?
 "puppy".chicken?
 
-@self@ is a way of referring to the object that the method is being called on
+@self@ is a way of referring to the object that the method is being called on.
+
+In @"puppy".chicken?@, @self@ is @"puppy"@.
 
 h1. Classes Exercise
 
@@ -300,6 +302,28 @@ h1. Learn more about common Ruby classes
 Good places to start: Array, Enumerable, Fixnum, Float, Hash, NilClass, String, Time
 
 h1. Blocks
+
+* A *block* is a computation, but *not* a method
+* A block is of the form @{|arg1, arg2, ..| code}@
+* @{|v| v.palindrome?}
+* @{|x, y| x * y}
+
+Some methods take blocks.
+
+@list.each {|p| code}@ runs @code@ on every element of @list@
+
+bc. list = [1,2,3,4]
+list.each {|n| n + 1}
+
+A more complicated example of using each:
+
+bc. reviews = Hash.new(0)
+reviews = books.values.each {|rate| reviews[rate] = review[rate] + 1}
+reviews
+
+@reviews@ is a count of how many reviews you gave with a particular rating
+
+@reviews[5]@
 
 h1. Control Structures
 
