@@ -261,7 +261,7 @@ h1. Classes
 
 Let's use our Counter class:
 
-bc. count = new Counter
+bc. count = Counter.new
 count.increment
 count.increment
 count.class
@@ -342,7 +342,7 @@ end
 
 h1. Control Structures
 
-Ruby provides control structures for writing more complicated code
+Ruby provides control structures for writing more complicated code.
 
 If statements are a switch on whether the argument is true or false.
 
@@ -361,7 +361,7 @@ h1. Control Structures
 While statements allow repetition:
 
 bc. i = 0
-c = new Counter
+c = Counter.new
 while i < 10
   c.increment
   i = i + 1
