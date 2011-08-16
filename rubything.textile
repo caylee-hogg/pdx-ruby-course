@@ -395,8 +395,9 @@ h1. Koans
 
 h1. Intro To Rails
 
-* Rails is a library for building and deploying web applications
-* ???
+* Rails is a library or framework for building and deploying web applications
+* It's structured using an architecture called MVC: Model-View-Controller
+* MVC separates different kinds of application logic into sections based on what it's used for. In Rails, these live in separate folders.
 
 h1. An Example Rails App
 
