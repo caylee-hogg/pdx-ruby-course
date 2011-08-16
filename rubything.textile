@@ -158,7 +158,7 @@ h1. Hashes
 
 Let's consider a book rating system: 
 * We use numeric values 0-5 to represent a book that you've read
-* :notfinished will represent a book that you haven't finished
+* :not_finished will represent a book that you haven't finished
 * We'll store all this data in a hash
 
 Fill in a hash with some books, e.g.
