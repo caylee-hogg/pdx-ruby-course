@@ -36,8 +36,13 @@ h1. Why Ruby?
 
 h1. Starting Ruby
 
-instructions to start irb, a couple of words on how to navigate it?
-Cute tricks, pitfalls?
+Open a terminal window. Type "irb" and hit enter.
+
+Try entering a few things: @1@, @1 + 1@, @"1"@, @(0...15).each { |i| puts i }@
+
+@>>@ is your prompt to enter text and @=>@ will appear at the start of each response.
+
+Use your arrow keys to navigate back and forth through the previous commands you've entered.
 
 % Okay, so one thing we need to do here is figure out just exactly what we'll
 % do with respect to TryRuby. We can't, in some sense, just have people follow
