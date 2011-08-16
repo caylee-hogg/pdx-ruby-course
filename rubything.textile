@@ -164,17 +164,17 @@ Fill in a hash with some books, e.g.
 bc. books = { "Left Hand of Darkness"        => 5,
           "The Word for World Is Forest" => 5,
           "Nevermind the Pollacks"       => 0,
-          "Only Revolutions"             => :notfinished }
+          "Only Revolutions"             => :not_finished }
 
 h1. Hashes
 
 We can retrieve the rating for a particular book like so
 
-@books["Left Hand of Darkness"]
+@books["Left Hand of Darkness"]@
 
 We can also *set* values like so
 
-@books["Only Revolutions" => 3]
+@books["Only Revolutions"] = 3@
 
 How can we add a rating for a new book? Any guesses?
 
@@ -183,17 +183,17 @@ h1. Hashes
 
 We can retrieve the rating for a particular book like so
 
-@books["Left Hand of Darkness"]
+@books["Left Hand of Darkness"]@
 
 We can also *set* values like so
 
-@books["Only Revolutions" => 3]
+@books["Only Revolutions"] = 3@
 
 How can we add a rating for a new book? Any guesses?
 
 We set the value of the book just like before!
 
-@books["White Teeth" => 4]
+@books["White Teeth"] = 4@
 
 h1. Let's Try Something
 
