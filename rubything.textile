@@ -420,26 +420,96 @@ End with the Gospel(in the old German sense) of Rails: much of the code
 needed to do those things can automatically be created by rails
 ) -->
 
-h1. Rails console examples
+h1. Microrants
 
-So here we need probably 5-10 slides of rails for zombies like examples of how
-this should all work
+* Twitter? Never heard of it.
+* 10 characters to express your anger
+%add description of main page, ability to edit rants, add rants, etc.
+%basic data schema should be two models: rants -> (id, message, userid)
+%                                        user -> (id, name)
+%authentication or no authentication?
+* What's behind the curtain?
+** Rails provides classes that allow us to retrieve and manipulate data easily 
+** Logic for the application is written in normal Ruby, no explicit DB munging
 
-h1. Cont.
+h1. At The Console
 
-h1. Cont.
+* Close down the Rails server
+* Run @rails console@
+* Can modify the data using @Rant@ and @User@ classes
+* @Rant@ class has @id@, @message@, and @user_id@ values.
 
-h1. Cont.
+Let's try creating a new Rant, for @user_id@ 1
 
-h1. Cont.
+bc.
+r = Rant.new
+r.message = "WHAT IS TH"
+r.user_id = 1
+r.save
 
-h1. Cont.
+Note that we didn't need to set the @id@ field of the message!
+That was automatically set by @new@. 
 
-h1. The code behind the curtain
+The new feature here is the method @save@, which makes the changes permanent
+rather than only during this session.
 
-how to use scaffolding - should be a step by step guide of how we made this
-and explaining what the commands are doing. I'm guessing quite a few slides
-will go here.
+h1. At The Console
+
+Creating a rant that way was verbose. Is there a better way?
+
+bc.
+Rant.create(:message => "E POINT!?", :user_id => 1)
+
+Notice that you didn't need to save when you use @create@
+
+h1. At The Console
+
+How can we look up a rant after it's been created?
+
+bc.
+r = Rant.find(1)
+r.message
+r.user_id
+
+What about modifying a rant?
+
+bc. 
+r.message = "RANTING!"
+r.save
+
+just like with creation, we need to @save@ the changes.
+
+h1. Where's My Stuff
+
+%include demonstrations of find commands
+
+h1. Exercises
+
+%some people are writing in lowercase! This violates our arbitrary TOS!
+%write a program that can convert all lowercase rants to uppercase!
+
+%write a program that makes a hash of rant messages paired with user NAMES
+
+h1. Quality Control
+
+%talk about validation, show how validation works with our application
+
+h1. Displaying the data
+
+%show the .erb files, explain how all that works
+
+h1. Exercises
+
+% Change the display to show messages with names instead of ids
+% Add, in addition, a calculation for who has written the most rants
+% and a message that says "Congrats, <name>, you're the angriest person here!"
+
+h1. Making Your Own
+
+* Exit @microrant@ directory
+* Run @rails betterrant@
+* Run (insert actual scaffolding commands)
+
 
 h1. Wrap-up
 
