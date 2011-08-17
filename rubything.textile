@@ -1,11 +1,25 @@
-% README
-% THESE SLIDES ARE NOT GOOD - JUST A REALLY SILLY VERBOSE ROUGH DRAFT
-% LET'S RIP THEM APART TO MAKE SOMETHING BETTER
-
 h1. Outline of the Day
 
+* 10:00-11:30 Introduction to Ruby
+* 11:30-Noon Ruby Koans
+* Noon-1:00 Lunch
+* 1:00-2:45 Rails
+* 2:45-3:00 Break
+* 3:00-4:30 Rails
+* 4:30 What Next?
 
-h1. What is programming?
+h1. What We'll Cover
+
+* Basic concepts of programming
+* Syntax and simple operations of Ruby
+* Objects, classes, and methods
+* An introduction to Rails
+* How to use Rails machinery to manipulate application data
+* Data validation in Rails
+* Displaying data in Rails
+* Using scaffolding to start a simple application
+
+h1. What Is Programming?
 
 * Programming is the act of writing programs
 * A program is just text
@@ -20,7 +34,7 @@ h1. What is programming?
 ** Find the largest number in a list of numbers
 ** Contact Trimet's network and find the most convenient bus route
 
-h1. What is a programming language?
+h1. What Is a Programming Language?
 
 * A human readable format for describing computations
 * Compilers or interpreters convert human-readable text to machine-readable
@@ -557,9 +571,28 @@ rake db:migrate
 
 At this point you can start the server and take a look around.
 
-h1. Wrap-up
+h1. Summary
 
-What we learned, summarized in a few slides
+* We've reviewed the basics of the Ruby language
+** For a refresher, "Try Ruby":http://tryruby.org/ is a browser based overview of Ruby
+** Ruby has a number of simple types of data such as strings, numbers, arrays, and hashes
+** Most computations in Ruby are handled by methods.
+** A class is a template for creating objects that bundles data and methods
+** Classes can be extended as new needs arise
+* We've covered a small rails application: microrants
+** A good next tutorial is "Rails For Zombies":http://railsforzombies.org/
+** More detail can be found in the "Ruby Guides":http://guides.rubyonrails.org/
+** ActiveRecord allows us to manipulate our persistent data like normal objects
+** .erb files allow us to intergrate Ruby code with html
+** Scaffolding gives a way of automating the start of a Rails project
+
+h1. Next Steps
+
+* Try to make betterrant match or improve upon microrant
+* Get involved in the local Ruby "user group":http://pdxruby.org/
+* Start coming to "Code-n-Splode":http://codeandsplode.org/
+
+%what else should go here?
 
 h1. Stepping outside
 
