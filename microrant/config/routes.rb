@@ -1,4 +1,9 @@
 Microrant::Application.routes.draw do
+  resources :rants
+
+  resources :users
+
+  root :to => "rants#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

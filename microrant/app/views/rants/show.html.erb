@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @rant.user_id %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @rant.message %>
+</p>
+
+
+<%= link_to 'Edit', edit_rant_path(@rant) %> |
+<%= link_to 'Back', rants_path %>
