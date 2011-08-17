@@ -398,7 +398,7 @@ h1. Intro To Rails
 * Rails is a library or framework for building and deploying web applications
 * It's structured using an architecture called MVC: Model-View-Controller
 * MVC separates different kinds of application logic into sections based on what it's used for. In Rails, these live in separate folders.
-* Rails values "convention over configuration"--the platform will make certain assumptions about how you're going to build your application. This makes tasks that suit Rails' conventions very easy, but actions that don't follow these conventions can be much harder.
+* Rails values "convention over configuration"--the platform will make certain assumptions about how you're going to build your application. This makes tasks that suit Rails' conventions very easy, but actions that don't follow these conventions will take more work.
 
 h1. An Example Rails App
 
