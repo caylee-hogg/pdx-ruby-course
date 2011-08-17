@@ -491,7 +491,7 @@ h1. Exercises
 
 Some people are writing in lowercase! This won't do!
 
-Let's write a method that can convert all lowercase rants to uppercase!
+Let's write a method that can convert all lowercase rants to uppercase! First, go find the rant.rb file in your Rails models directory.
 
 bc. class Rant < ActiveRecord::Base
 before_save :convert_message_to_uppercase
@@ -500,13 +500,21 @@ def convert_message_to_uppercase
 
 Rails provides many extensions to Ruby classes to make common tasks easier. Look in "http://api.rubyonrails.org/classes/ActiveSupport/Multibyte/Chars.html":http://api.rubyonrails.org/classes/ActiveSupport/Multibyte/Chars.html to find the helper you need for this exercise.
 
+Once you've added the code, try creating a lowercase rant and see what happens.
+
 h1. Exercises
 
-% write a program that makes a hash of rant messages paired with user NAMES
+Sometimes you want to work with your data in a different format. Go back to the Rails console and write a program that creates a hash that contains rant messages paired with user names.
+
+Bonus exercise: amend your code to print out each pair in a formatted string (you'll need an iteration loop like for..each and the Ruby function @puts@ to print out each line).
 
 h1. Quality Control
 
-% talk about validation and show how validation works with our application
+The @before_save@ code we wrote earlier uses a *callback*. Rails defines several callbacks that allow you to change the input to a model before or after actions like save, create, update, and delete. There's also another kind of callback called a validation.
+
+Validations provide an easy wrapper for checking that a particular attribute is present, in the right format, or other requirements before the application will save the data. The microblog application already contains some of these. Look at the Rant and User models to see the ones we've included.
+
+Can you think of other validations you'd like to add? Try changing the length of a valid Rant message.
 
 h1. Displaying the data
 
