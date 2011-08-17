@@ -547,9 +547,15 @@ These also work through has_many associations, so given a particular user record
 h1. Making Your Own
 
 * Exit @microrant@ directory
-* Run @rails betterrant@
-* Run (insert actual scaffolding commands)
+* Run @rails new betterrant@
+* Enter the betterrant directory and run:
 
+bc. bundle install
+rails generate scaffold User name:string
+rails generate scaffold Rant user_id:integer message:string
+rake db:migrate
+
+At this point you can start the server and take a look around.
 
 h1. Wrap-up
 
