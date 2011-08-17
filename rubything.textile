@@ -489,8 +489,18 @@ Try:
 
 h1. Exercises
 
-% some people are writing in lowercase! This violates our arbitrary TOS!
-% write a program that can convert all lowercase rants to uppercase!
+Some people are writing in lowercase! This won't do!
+
+Let's write a method that can convert all lowercase rants to uppercase!
+
+bc. class Rant < ActiveRecord::Base
+before_save :convert_message_to_uppercase
+def convert_message_to_uppercase
+  ...
+
+Rails provides many extensions to Ruby classes to make common tasks easier. Look in "http://api.rubyonrails.org/classes/ActiveSupport/Multibyte/Chars.html":http://api.rubyonrails.org/classes/ActiveSupport/Multibyte/Chars.html to find the helper you need for this exercise.
+
+h1. Exercises
 
 % write a program that makes a hash of rant messages paired with user NAMES
 
