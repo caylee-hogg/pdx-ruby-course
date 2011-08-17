@@ -518,13 +518,31 @@ Can you think of other validations you'd like to add? Try changing the length of
 
 h1. Displaying the data
 
-% show the .erb files and explain how all that works
+Rails will automatically create views with content when you use the @scaffold@ command. Go to /app/views and have a look around.
+
+These files are making use of a templating system called ERB that converts Ruby statements in the view into static HTML to display. A typical ERB statement might look like:
+
+% TODO: figure out how to display this without getting clobbered by slideshow's parser %
+
+Documentation on ERB syntax: "http://ruby-doc.org/stdlib/libdoc/erb/rdoc/classes/ERB.html":http://ruby-doc.org/stdlib/libdoc/erb/rdoc/classes/ERB.html
 
 h1. Exercises
 
-% Change the display to show messages with names instead of ids
+The scaffolding system is quick to use, but not always pretty. Our list of rants lists the @user_id@ for the person who said it, and not their name. Let's change that.
+
+Go to /app/views/rants/ and open the index.html file. By default, the scaffolder makes the index view show a list of all records of the related model's type. Find the line that displays the user id and change it to show the user's name instead.
+
+% Instructional note: this may require explaining that you can chain method calls to get rant.user.name %
+
+h1. Exercises
+
+On the users index page, let's add a column to the table to show how many rants each person has written. ActiveRecord makes this easy by providing a method called @count@ that you can add to a collection of records to get the database count instead of the full records. For example, @User.count@ or @Rants.count@.
+
+These also work through has_many associations, so given a particular user record, you could try @user.kittens.count@ or @user.books.count@ (if those associations existed) or ...
+
 % Add, in addition, a calculation for who has written the most rants
 % and a message that says "Congrats, <name>, you're the angriest person here!"
+% AE note - this might be a good one for people moving fast, but the way I would probably recommend doing it is involved enough I'd keep this as a bonus exercise only %
 
 h1. Making Your Own
 
