@@ -277,7 +277,7 @@ in objects and providing ways to use it.
 Thus @attr_accessor :value@ means that:
 
 * Every counter holds a piece of data named @@value@
-* Outside of the class, @@value@ can be as @c.value@ and @c.value = 5@
+* Outside of the class, @@value@ can be accessed as @c.value@ and @c.value = 5@
 
 h1. Classes
 
