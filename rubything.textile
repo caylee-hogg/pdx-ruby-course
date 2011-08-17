@@ -402,7 +402,14 @@ h1. Intro To Rails
 
 h1. An Example Rails App
 
-(directions for how to run this application and what to do with it as
+To get started:
+
+# Go to the microrant directory
+# Type @bundle install@
+# Then type @rails server@
+# Open "http://localhost:3000":http://localhost:3000 in your web browser
+
+<!-- (directions for how to run this application and what to do with it as
 examples - need a script for manipulating it in the web browser.
 Need examples of 
 # Viewing data
@@ -411,7 +418,7 @@ Need examples of
 # Destroying data
 End with the Gospel(in the old German sense) of Rails: much of the code
 needed to do those things can automatically be created by rails
-)
+) -->
 
 h1. Rails console examples
 
