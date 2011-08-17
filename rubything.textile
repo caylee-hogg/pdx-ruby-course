@@ -563,7 +563,7 @@ h1. What about the C in MVC?
 Now that we've seen and edited models and views, let's take a quick look at the controller files in our project.
 
 What does a controller do?
-* It connects the view and the model, calling methods on the models to get the data needed for the view.
+* It connects the view and the model, calling methods on the models to get the data needed for the view, and allowing you to access input parameters, such as those from a form.
 * It responds to the HTTP request from the browser, and renders the requested type of output (in our scaffolds, this is html or xml, but other things like json can easily be added--instant API!)
 * The controller is also where you would add access control, like only allowing the user who wrote the rant to delete it.
 
