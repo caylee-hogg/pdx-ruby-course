@@ -276,8 +276,8 @@ in objects and providing ways to use it.
 
 Thus @attr_accessor :value@ means that:
 
-* Every counter holds a piece of data named @\@value@
-* Outside of the class, @\@value@ can be as @c.value@ and @c.value = 5@ 
+* Every counter holds a piece of data named @@value@
+* Outside of the class, @@value@ can be as @c.value@ and @c.value = 5@
 
 h1. Classes
 
@@ -285,7 +285,7 @@ You can add methods to existing classes as well:
 
 bc. class String
   def chicken?
-    self == chicken?
+    self == "chicken"
   end
 end
 "chicken".chicken?
