@@ -420,29 +420,29 @@ End with the Gospel(in the old German sense) of Rails: much of the code
 needed to do those things can automatically be created by rails
 ) -->
 
-h1. Microrants
+h1. Microrant
 
 * Twitter? Never heard of it.
 * 10 characters to express your anger
-%add description of main page, ability to edit rants, add rants, etc.
-%basic data schema should be two models: rants -> (id, message, userid)
-%                                        user -> (id, name)
-%authentication or no authentication?
+* Basic activities: create, read, update, delete (CRUD)
+* Go to http://localhost:3000/users/new to create a new user with your name
+* Then go to /rants/new and create a new rant
+
 * What's behind the curtain?
 ** Rails provides classes that allow us to retrieve and manipulate data easily 
-** Logic for the application is written in normal Ruby, no explicit DB munging
+** Logic for the application is written in normal Ruby, and a module called ActiveRecord does all of the database connection work for you
 
 h1. At The Console
 
 * Close down the Rails server
 * Run @rails console@
-* Can modify the data using @Rant@ and @User@ classes
-* @Rant@ class has @id@, @message@, and @user_id@ values.
+* You can modify the data using @Rant@ and @User@ classes
+* The @User@ class has @id@ and @name@ attributes
+* The @Rant@ class has @id@, @message@, and @user_id@ attributes
 
 Let's try creating a new Rant, for @user_id@ 1
 
-bc.
-r = Rant.new
+bc. r = Rant.new
 r.message = "WHAT IS TH"
 r.user_id = 1
 r.save
@@ -457,46 +457,50 @@ h1. At The Console
 
 Creating a rant that way was verbose. Is there a better way?
 
-bc.
-Rant.create(:message => "E POINT!?", :user_id => 1)
+@Rant.create(:message => "E POINT!?", :user_id => 1)@
 
-Notice that you didn't need to save when you use @create@
+Notice that you don't need to save when you use @create@--it combines @new@ and @save@ into a single action.
 
 h1. At The Console
 
 How can we look up a rant after it's been created?
 
-bc.
-r = Rant.find(1)
+bc. r = Rant.find(1)
 r.message
 r.user_id
 
 What about modifying a rant?
 
-bc. 
-r.message = "RANTING!"
+bc. r.message = "RANTING!"
 r.save
 
-just like with creation, we need to @save@ the changes.
+Just like when we create a new record, we need to @save@ the changes.
 
 h1. Where's My Stuff
 
-%include demonstrations of find commands
+Rails models have built-in finder methods that help you retrieve records from the database.
+
+Try:
+* @Rant.all@
+* @Rant.first@
+* @Rant.find(:all, :user_id => 1)@
+* @Rant.all(:user_id => 1)@
+* @Rant.find_by_user_id(1)@
 
 h1. Exercises
 
-%some people are writing in lowercase! This violates our arbitrary TOS!
-%write a program that can convert all lowercase rants to uppercase!
+% some people are writing in lowercase! This violates our arbitrary TOS!
+% write a program that can convert all lowercase rants to uppercase!
 
-%write a program that makes a hash of rant messages paired with user NAMES
+% write a program that makes a hash of rant messages paired with user NAMES
 
 h1. Quality Control
 
-%talk about validation, show how validation works with our application
+% talk about validation and show how validation works with our application
 
 h1. Displaying the data
 
-%show the .erb files, explain how all that works
+% show the .erb files and explain how all that works
 
 h1. Exercises
 
