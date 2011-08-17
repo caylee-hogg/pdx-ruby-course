@@ -318,8 +318,8 @@ h1. Blocks
 
 * A *block* is a computation, but *not* a method
 * A block is of the form @{ |arg1, arg2, ..| code }@
-* @{ |v| v.palindrome? }
-* @{ |x, y| x * y }
+* @{ |v| v.palindrome? }@
+* @{ |x, y| x * y }@
 
 Some methods take blocks.
 
