@@ -766,7 +766,7 @@ h1. Summary
 
 h1. Summary
 
-* We've covered a small rails application: microrants
+* We've covered a small Rails application: microrants
 ** A good next tutorial is "Rails For Zombies":http://railsforzombies.org/
 ** More detail can be found in the "Ruby Guides":http://guides.rubyonrails.org/
 ** ActiveRecord allows us to manipulate our persistent data like normal objects
@@ -779,7 +779,7 @@ h1. Next Steps
 * Get involved in the local Ruby "user group":http://pdxruby.org/
 * Start coming to "Code-n-Splode":http://codeandsplode.org/
 
-% TODO what else should go here?
+% TODO what else should go here? mention some materials in the take-home packet?
 
 h1. Stepping outside
 
