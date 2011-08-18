@@ -55,7 +55,7 @@ h1. Starting Ruby
 
 Open a terminal window. Type "irb" and hit enter.
 
-% say something about irb is an interpreter
+% TODO say something about irb is an interpreter
 
 Try entering a few things: 
 
@@ -76,7 +76,7 @@ Use the up and down arrow keys to navigate back and forth through the previous c
 
 h1. Basic Ruby Data
 
-% more tabley
+% TODO more tabley
 
 |Numbers | @1@, @2@, @3@|
 |Strings | @"chicken"@ |
@@ -250,7 +250,7 @@ We set the value of the book just like before!
 
 Now type @books@ to see the whole hash.
 
-% what is a method
+% TODO what is a method
 
 h1. Let's Try Something
 
@@ -279,7 +279,7 @@ What about @"chicken".methods@ ?
 
 h1. Objects
 
-% better term for piece
+% TODO better term for piece
 
 An object is a piece of data along with the methods, computations, that
 can operate on it.
@@ -294,7 +294,7 @@ What *is* a class?
 
 h1. Classes & Methods
 
-% wording of templates, descriptions
+% TODO wording of templates, descriptions
 
 * Classes are templates for making objects
 * Classes create different types of objects
@@ -307,8 +307,8 @@ h1. Classes & Methods
 
 Let's learn the syntax by example:
 
-% do bc.. to make it formatted more better
-% break this out into a series of pieces of defining more and more
+% TODO do bc.. to make it formatted more better
+% TODO break this out into a series of pieces of defining more and more
 % pieces. We can explain the whole thing piecemeal and then end
 % with modifying incremement to take an argument and add n instead of 1
 
@@ -380,7 +380,7 @@ and finish the rest! Test it on @"abba".palindrome?@ and @"puppy".palindrome?@
 
 h1. Learn more about common Ruby classes
 
-% add new methods to your counter class!
+% TODO add new methods to your counter class!
 
 "http://rubydoc.info/stdlib/core/":http://rubydoc.info/stdlib/core
 
@@ -388,7 +388,7 @@ Good places to start: Array, Enumerable, Fixnum, Float, Hash, NilClass, String, 
 
 h1. Blocks
 
-% flip this slide and introduce blocks by example first then explain what
+% TODO flip this slide and introduce blocks by example first then explain what
 % they are - have other examples of block usage first, sort_by and map as
 % well as just each
 % pull up array documentation or something like that in terms of showing
@@ -408,7 +408,7 @@ list.each { |n| n + 1 }
 
 h1. Blocks
 
-% different block iterator than the previous things, something more complicated
+% TODO different block iterator than the previous things, something more complicated
 
 A more complicated example of using each:
 
@@ -450,7 +450,7 @@ end
 
 h1. Control Structures
 
-% NO WHILE
+% TODO NO WHILE
 
 While statements allow repetition:
 
@@ -464,7 +464,7 @@ c.value
 
 h1. Control Structures
 
-% LOSE THIS IN FAVOR OF CASE OR SOMETHING MORE USEFUL
+% TODO LOSE THIS IN FAVOR OF CASE OR SOMETHING MORE USEFUL
 
 For-in statements allow iteration over a structure such as a list
 
@@ -518,11 +518,11 @@ h1. Microrant
 ** Rails provides classes that allow us to retrieve and manipulate data easily 
 ** Logic for the application is written in normal Ruby, and a module called ActiveRecord does all of the database connection work for you
 
-% Need to add "what is a database" description
+% TODO Need to add "what is a database" description
 
 h1. At The Console
 
-% say ^C the Rails server not just close down
+% TODO say ^C the Rails server not just close down
 
 * Close down the Rails server
 * Run @rails console@
@@ -532,7 +532,7 @@ h1. At The Console
 
 Let's try creating a new Rant, for @user_id@ 1
 
-% show finding and editing before creating
+% TODO show finding and editing before creating
 % show how to do things right without modifying id fields
 
 bc. r = Rant.new
@@ -573,7 +573,7 @@ h1. Where's My Stuff
 
 Rails models have built-in finder methods that help you retrieve records from the database.
 
-% upgrade to rails3 syntax
+% TODO upgrade to rails3 syntax
 
 Try:
 * @Rant.all@
@@ -603,12 +603,12 @@ Sometimes you want to work with your data in a different format. Go back to the 
 
 Bonus exercise: amend your code to print out each pair in a formatted string (you'll need an iteration loop like for..each and the Ruby function @puts@ to print out each line).
 
-% NOTE - have example output for the exercises, more guidance for how to get
+% TODO NOTE - have example output for the exercises, more guidance for how to get
 % started, e.g. showing how to define the Hash
 
 h1. Quality Control
 
-% split into two slides
+% TODO split into two slides
 % callback slide, slide on validations - explain validations as constraints
 % example code with validations/showing actual code
 
@@ -638,17 +638,17 @@ Go to /app/views/rants/ and open the index.html file. By default, the scaffolder
 
 h1. Exercises
 
-% Need to explain has_many and all that jazz sometime before then
+% TODO Need to explain has_many and all that jazz sometime before then
 
 On the users index page, let's add a column to the table to show how many rants each person has written. ActiveRecord makes this easy by providing a method called @count@ that you can add to a collection of records to get the database count instead of the full records. For example, @User.count@ or @Rants.count@.
 
 These also work through has_many associations, so given a particular user record, you could try @user.kittens.count@ or @user.books.count@ (if those associations existed) or ...
 
-% Add, in addition, a calculation for who has written the most rants
+% TODO Add, in addition, a calculation for who has written the most rants
 % and a message that says "Congrats, <name>, you're the angriest person here!"
 % AE note - this might be a good one for people moving fast, but the way I would probably recommend doing it is involved enough I'd keep this as a bonus exercise only %
 
-% ADD CONTENT ON ROUTES
+% TODO ADD CONTENT ON ROUTES
 
 h1. What about the C in MVC?
 
@@ -680,6 +680,9 @@ h1. Summary
 ** Most computations in Ruby are handled by methods.
 ** A class is a template for creating objects that bundles data and methods
 ** Classes can be extended as new needs arise
+
+h1. Summary
+
 * We've covered a small rails application: microrants
 ** A good next tutorial is "Rails For Zombies":http://railsforzombies.org/
 ** More detail can be found in the "Ruby Guides":http://guides.rubyonrails.org/
@@ -693,7 +696,7 @@ h1. Next Steps
 * Get involved in the local Ruby "user group":http://pdxruby.org/
 * Start coming to "Code-n-Splode":http://codeandsplode.org/
 
-% what else should go here?
+% TODO what else should go here?
 
 h1. Stepping outside
 
