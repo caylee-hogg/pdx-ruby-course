@@ -556,46 +556,23 @@ h1. Microrant
 * Basic activities: create, read, update, delete (CRUD)
 * Go to http://localhost:3000/users/new to create a new user with your name
 * Then go to /rants/new and create a new rant
+** Rants can also be edited and deleted--give it a try!
 
 * What's behind the curtain?
 ** Rails provides classes that allow us to retrieve and manipulate data easily 
 ** Logic for the application is written in normal Ruby, and a module called ActiveRecord does all of the database connection work for you
 
-% TODO Need to add "what is a database" description
+h1. Behind the Scenes: the database
+
+% Describe what a database is, and talk about how the items they're creating are stored in tables %
 
 h1. At The Console
 
-% TODO say ^C the Rails server not just close down
-
-* Close down the Rails server
+* Close down the Rails server with Ctrl-C
 * Run @rails console@
 * You can modify the data using @Rant@ and @User@ classes
 * The @User@ class has @id@ and @name@ attributes
 * The @Rant@ class has @id@, @message@, and @user_id@ attributes
-
-Let's try creating a new Rant, for @user_id@ 1
-
-% TODO show finding and editing before creating
-% show how to do things right without modifying id fields
-
-bc. r = Rant.new
-r.message = "WHAT IS TH"
-r.user_id = 1
-r.save
-
-Note that we didn't need to set the @id@ field of the message!
-That was automatically set by @new@. 
-
-The new feature here is the method @save@, which makes the changes permanent
-rather than only during this session.
-
-h1. At The Console
-
-Creating a rant that way was verbose. Is there a better way?
-
-@Rant.create(:message => "E POINT!?", :user_id => 1)@
-
-Notice that you don't need to save when you use @create@--it combines @new@ and @save@ into a single action.
 
 h1. At The Console
 
@@ -610,7 +587,7 @@ What about modifying a rant?
 bc. r.message = "RANTING!"
 r.save
 
-Just like when we create a new record, we need to @save@ the changes.
+We need to @save@ the changes when we're done editing.
 
 h1. Where's My Stuff
 
@@ -624,6 +601,28 @@ Try:
 * @Rant.find(:all, :user_id => 1)@
 * @Rant.all(:user_id => 1)@
 * @Rant.find_by_user_id(1)@
+
+h1. At the Console
+
+Let's try creating a new Rant, for @user_id@ 1
+
+bc. user = User.find(1)
+rant = user.rants.build
+rant.message = "WHAT IS TH"
+rant.save
+
+Note that we didn't need to set the @id@ field of the message!
+That was automatically set by @new@. 
+
+We @save@ the record when we're done, in order to create it, just like when we were editing a rant before.
+
+h1. At The Console
+
+Creating a rant that way was verbose. Is there a better way?
+
+@Rant.create(:message => "E POINT!?", :user_id => 1)@
+
+Notice that you don't need to save when you use @create@--it combines @new@ and @save@ into a single action.
 
 h1. Exercises
 
