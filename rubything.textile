@@ -25,8 +25,7 @@ h1. What We'll Cover
 h1. What Is Programming?
 
 * Programming is the act of writing programs
-* A program is just text %blerch
-* A program is a precise description of how to perform a *computation* on *data*
+* A program is a precise, text-based, description of how to perform a *computation* on *data*
 * Data
 ** Numbers
 ** Strings: pieces of text
@@ -68,9 +67,7 @@ bc.
 
 @>>@ is your prompt to enter text and @=>@ will appear at the start of each response.
 
-Use your arrow keys to navigate back and forth through the previous commands you've entered.
-
-% make stuff on arrow keys more explicit
+Use the up and down arrow keys to navigate back and forth through the previous commands you've entered.
 
 % Okay, so one thing we need to do here is figure out just exactly what we'll
 % do with respect to TryRuby. We can't, in some sense, just have people follow
@@ -132,6 +129,18 @@ h1. Basic Ruby Computations
 | @2 + 2 == 5@ | |
 | @[1 , 2, 3].include?(2)@ | | |
 
+
+h1. Basic Ruby Computations
+
+| @2 + 2@ | @4@ |
+| @3 * 3@ | @9@ |
+| @"chicken".reverse@ | @"nekcihc"@ |
+| @"chicken".length@  | @7@ |
+| @2 + 2 == 4@ | |
+| @2 + 2 == 5@ | |
+| @[1 , 2, 3].include?(2)@ | | |
+
+
 h1. Basic Ruby Computations
 
 | @2 + 2@ | @4@ |
@@ -140,7 +149,18 @@ h1. Basic Ruby Computations
 | @"chicken".length@  | @7@ |
 | @2 + 2 == 4@ | @true@ |
 | @2 + 2 == 5@ | |
-| @[1 , 2, 3].include?(2)@ | | |
+| @[1, 2, 3].include?(2)@ | | |
+
+
+h1. Basic Ruby Computations
+
+| @2 + 2@ | @4@ |
+| @3 * 3@ | @9@ |
+| @"chicken".reverse@ | @"nekcihc"@ |
+| @"chicken".length@  | @7@ |
+| @2 + 2 == 4@ | @true@ |
+| @2 + 2 == 5@ | @false@ |
+| @[1, 2, 3].include?(2)@ | |  |
 
 h1. Basic Ruby Computations
 
@@ -154,8 +174,6 @@ h1. Basic Ruby Computations
 
 What do you think @"chicken".reverse.length@ does?
 What about @"puppy".include?('p')@?
-
-% intermmediate slides got deleted
 
 h1. That's Nice But...
 
@@ -230,7 +248,7 @@ We set the value of the book just like before!
 
 @books["White Teeth"] = 4@
 
-% add something about showing the whole hash
+Now type @books@ to see the whole hash.
 
 % what is a method
 
@@ -248,9 +266,9 @@ What happens?
 
 Ruby just reported @NoMethodError: undefined method `reverse' for 40:Fixnum@
 
-That means that @reverse@ is not defined for the number 40.
+That means that @reverse@ is not something you can do to the number 40.
 
-% split slide rar
+h1. Methods
 
 Most computations in Ruby are performed by *methods*.
 Type @40.methods@ to see which methods are available for basic numbers.
@@ -275,8 +293,6 @@ How do you know what kind of object something is? Ask!
 What *is* a class?
 
 h1. Classes & Methods
-
-h2. Classes
 
 % wording of templates, descriptions
 
@@ -319,9 +335,11 @@ count.methods
 
 % change to use respond_to? , have a note about what respond_to? does in speech
 
-With @count.methods@, what did you see?
+Try @count.respond_to?(increment)@. What did you see?
 
 h1. Classes
+
+% TODO: Need to revisit this part and clean up explanation
 
 What was @attr_accessor@? It's a way of declaring data contained
 in objects and providing ways to use it.
@@ -418,14 +436,16 @@ Ruby provides control structures for writing more complicated code.
 
 If statements are a switch on whether the argument is true or false.
 
-bc. if true
-then 1
-else 2
+bc.. if true
+  1
+else 
+  2
 end
 
-bc. if false
-then 1
-else 2
+bc.. if false
+  1
+else 
+  2
 end
 
 h1. Control Structures
