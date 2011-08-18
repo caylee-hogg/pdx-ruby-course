@@ -1,3 +1,6 @@
+% INTRODUCE COMMENTS AT SOME POINT
+% INTRODUCE STRING INTERPOLATION
+
 h1. Outline of the Day
 
 * 10:00-11:30 Introduction to Ruby
@@ -22,7 +25,7 @@ h1. What We'll Cover
 h1. What Is Programming?
 
 * Programming is the act of writing programs
-* A program is just text
+* A program is just text %blerch
 * A program is a precise description of how to perform a *computation* on *data*
 * Data
 ** Numbers
@@ -37,26 +40,37 @@ h1. What Is Programming?
 h1. What Is a Programming Language?
 
 * A human readable format for describing computations
-* Compilers or interpreters convert human-readable text to machine-readable
+% * Compilers or interpreters convert human-readable text to machine-readable
 * Any language can describe the same computations
 * Different languages are really just a different vocabulary
-* Different vocabularies offer different ways of expressing an idea: like human languages, each programming language makes some things easy to "say" and some things harder
+% * Different vocabularies offer different ways of expressing an idea: like human languages, each programming language makes some things easy to "say" and some things harder
 
 h1. Why Ruby?
 
 * It's easy to learn
 * Portland has a strong Ruby community
+* Rails is a framework built on Ruby
 * Rails gives Ruby a good, simple, vocabulary for web development
 
 h1. Starting Ruby
 
 Open a terminal window. Type "irb" and hit enter.
 
-Try entering a few things: @1@, @1 + 1@, @"1"@, @(0...15).each { |i| puts i }@
+% say something about irb is an interpreter
+
+Try entering a few things: 
+
+bc.
+1
+4 + 3 
+"hat" 
+[1, 2, 3, "happy"].each { |i| puts i }
 
 @>>@ is your prompt to enter text and @=>@ will appear at the start of each response.
 
 Use your arrow keys to navigate back and forth through the previous commands you've entered.
+
+% make stuff on arrow keys more explicit
 
 % Okay, so one thing we need to do here is figure out just exactly what we'll
 % do with respect to TryRuby. We can't, in some sense, just have people follow
@@ -65,11 +79,13 @@ Use your arrow keys to navigate back and forth through the previous commands you
 
 h1. Basic Ruby Data
 
+% more tabley
+
 |Numbers | @1@, @2@, @3@|
 |Strings | @"chicken"@ |
 |Booleans| @true@, @false@|
 |Symbols | @:chicken@ |
-|Arrays | @[1 , 7, "cake"]@|
+|Arrays | @[1, 7, "cake"]@|
 |Hashes  | @{:chicken => "chicken", :sillyexample => :chicken}@|
 
 Type these at the command line! What happens?
@@ -134,16 +150,19 @@ h1. Basic Ruby Computations
 | @"chicken".length@  | @7@ |
 | @2 + 2 == 4@ | @true@ |
 | @2 + 2 == 5@ | @false@ |
-| @[1 , 2, 3].include?(2)@ | | @true@ |
+| @[1, 2, 3].include?(2)@ | | @true@ |
 
 What do you think @"chicken".reverse.length@ does?
 What about @"puppy".include?('p')@?
 
+% intermmediate slides got deleted
+
 h1. That's Nice But...
 
-* How do we chain together steps or use the result of an action?
+* How do we combine steps or use the result of an action?
 * Variables name particular values
-* @var1 = 4@, @var2 = "chicken"@
+* @var1 = 4@
+* @var2 = "chicken"@
 
 Try typing the following, noting what happens at each step 
 
@@ -166,13 +185,13 @@ awesomelist.sort!
 awesomelist
 
 How did that happen? Actions that end with a @!@ *change* the data!
-This is a programming convention, but a good one to follow.
+This is a Ruby convention, but a good one to follow.
 
 h1. Hashes
 
 Let's consider a book rating system: 
 * We use numeric values 0-5 to represent a book that you've read
-* :not_finished will represent a book that you haven't finished
+* :not_rated will represent a book that you haven't rated
 * We'll store all this data in a hash
 
 Fill in a hash with some books, e.g.
@@ -180,7 +199,7 @@ Fill in a hash with some books, e.g.
 bc. books = { "Left Hand of Darkness"        => 5,
           "The Word for World Is Forest" => 5,
           "Nevermind the Pollacks"       => 0,
-          "Only Revolutions"             => :not_finished }
+          "Only Revolutions"             => :not_rated }
 
 h1. Hashes
 
@@ -211,6 +230,10 @@ We set the value of the book just like before!
 
 @books["White Teeth"] = 4@
 
+% add something about showing the whole hash
+
+% what is a method
+
 h1. Let's Try Something
 
 @40.reverse@
@@ -227,14 +250,18 @@ Ruby just reported @NoMethodError: undefined method `reverse' for 40:Fixnum@
 
 That means that @reverse@ is not defined for the number 40.
 
+% split slide rar
+
 Most computations in Ruby are performed by *methods*.
 Type @40.methods@ to see which methods are available for basic numbers.
 
 Notice @+@, @-@, et al. in the list? 
 
-What about @"chicken".methods@?
+What about @"chicken".methods@ ?
 
 h1. Objects
+
+% better term for piece
 
 An object is a piece of data along with the methods, computations, that
 can operate on it.
@@ -250,16 +277,24 @@ What *is* a class?
 h1. Classes & Methods
 
 h2. Classes
+
+% wording of templates, descriptions
+
+* Classes are templates for making objects
 * Classes create different types of objects
 ** All numbers can be added
 ** All strings can be reversed
 * They define kinds of data and methods on that data
-* Classes are templates for making objects
 
 
 h1. Classes & Methods
 
 Let's learn the syntax by example:
+
+% do bc.. to make it formatted more better
+% break this out into a series of pieces of defining more and more
+% pieces. We can explain the whole thing piecemeal and then end
+% with modifying incremement to take an argument and add n instead of 1
 
 bc. class Counter 
   attr_accessor :value
@@ -281,6 +316,8 @@ count.increment
 count.value
 count.class
 count.methods
+
+% change to use respond_to? , have a note about what respond_to? does in speech
 
 With @count.methods@, what did you see?
 
@@ -325,11 +362,19 @@ and finish the rest! Test it on @"abba".palindrome?@ and @"puppy".palindrome?@
 
 h1. Learn more about common Ruby classes
 
+% add new methods to your counter class!
+
 "http://rubydoc.info/stdlib/core/":http://rubydoc.info/stdlib/core
 
 Good places to start: Array, Enumerable, Fixnum, Float, Hash, NilClass, String, Time
 
 h1. Blocks
+
+% flip this slide and introduce blocks by example first then explain what
+% they are - have other examples of block usage first, sort_by and map as
+% well as just each
+% pull up array documentation or something like that in terms of showing
+% OH HAI some methods take blocks
 
 * A *block* is a computation, but *not* a method
 * A block is of the form @{ |arg1, arg2, ..| code }@
@@ -344,6 +389,8 @@ bc. list = [1,2,3,4]
 list.each { |n| n + 1 }
 
 h1. Blocks
+
+% different block iterator than the previous things, something more complicated
 
 A more complicated example of using each:
 
@@ -383,6 +430,8 @@ end
 
 h1. Control Structures
 
+% NO WHILE
+
 While statements allow repetition:
 
 bc. i = 0
@@ -395,6 +444,8 @@ c.value
 
 h1. Control Structures
 
+% LOSE THIS IN FAVOR OF CASE OR SOMETHING MORE USEFUL
+
 For-in statements allow iteration over a structure such as a list
 
 bc. list = [1,2,3,4,5]
@@ -406,11 +457,11 @@ sum
 
 h1. Koans
 
-(Addie should write what she wants here)
+"Ruby Koans":http://rubykoans.com/
 
 h1. Intro To Rails
 
-* Rails is a library or framework for building and deploying web applications
+* Rails is a framework for building and deploying web applications
 * It's structured using an architecture called MVC: Model-View-Controller
 * MVC separates different kinds of application logic into sections based on what it's used for. In Rails, these live in separate folders.
 * Rails values "convention over configuration"--the platform will make certain assumptions about how you're going to build your application. This makes tasks that suit Rails' conventions very easy, but actions that don't follow these conventions will take more work.
@@ -424,16 +475,16 @@ To get started:
 # Then type @rails server@
 # Open "http://localhost:3000":http://localhost:3000 in your web browser
 
-<!-- (directions for how to run this application and what to do with it as
-examples - need a script for manipulating it in the web browser.
-Need examples of 
-# Viewing data
-# Creating data
-# Modifying data
-# Destroying data
-End with the Gospel(in the old German sense) of Rails: much of the code
-needed to do those things can automatically be created by rails
-) -->
+% (directions for how to run this application and what to do with it as
+% examples - need a script for manipulating it in the web browser.
+% Need examples of 
+% # Viewing data
+% # Creating data
+% # Modifying data
+% # Destroying data
+% End with the Gospel(in the old German sense) of Rails: much of the code
+% needed to do those things can automatically be created by rails
+% ) -->
 
 h1. Microrant
 
@@ -447,7 +498,11 @@ h1. Microrant
 ** Rails provides classes that allow us to retrieve and manipulate data easily 
 ** Logic for the application is written in normal Ruby, and a module called ActiveRecord does all of the database connection work for you
 
+% Need to add "what is a database" description
+
 h1. At The Console
+
+% say ^C the Rails server not just close down
 
 * Close down the Rails server
 * Run @rails console@
@@ -456,6 +511,9 @@ h1. At The Console
 * The @Rant@ class has @id@, @message@, and @user_id@ attributes
 
 Let's try creating a new Rant, for @user_id@ 1
+
+% show finding and editing before creating
+% show how to do things right without modifying id fields
 
 bc. r = Rant.new
 r.message = "WHAT IS TH"
@@ -495,6 +553,8 @@ h1. Where's My Stuff
 
 Rails models have built-in finder methods that help you retrieve records from the database.
 
+% upgrade to rails3 syntax
+
 Try:
 * @Rant.all@
 * @Rant.first@
@@ -523,7 +583,14 @@ Sometimes you want to work with your data in a different format. Go back to the 
 
 Bonus exercise: amend your code to print out each pair in a formatted string (you'll need an iteration loop like for..each and the Ruby function @puts@ to print out each line).
 
+% NOTE - have example output for the exercises, more guidance for how to get
+% started, e.g. showing how to define the Hash
+
 h1. Quality Control
+
+% split into two slides
+% callback slide, slide on validations - explain validations as constraints
+% example code with validations/showing actual code
 
 The @before_save@ code we wrote earlier uses a *callback*. Rails defines several callbacks that allow you to change the input to a model before or after actions like save, create, update, and delete. There's also another kind of callback called a validation.
 
@@ -551,6 +618,8 @@ Go to /app/views/rants/ and open the index.html file. By default, the scaffolder
 
 h1. Exercises
 
+% Need to explain has_many and all that jazz sometime before then
+
 On the users index page, let's add a column to the table to show how many rants each person has written. ActiveRecord makes this easy by providing a method called @count@ that you can add to a collection of records to get the database count instead of the full records. For example, @User.count@ or @Rants.count@.
 
 These also work through has_many associations, so given a particular user record, you could try @user.kittens.count@ or @user.books.count@ (if those associations existed) or ...
@@ -558,6 +627,8 @@ These also work through has_many associations, so given a particular user record
 % Add, in addition, a calculation for who has written the most rants
 % and a message that says "Congrats, <name>, you're the angriest person here!"
 % AE note - this might be a good one for people moving fast, but the way I would probably recommend doing it is involved enough I'd keep this as a bonus exercise only %
+
+% ADD CONTENT ON ROUTES
 
 h1. What about the C in MVC?
 
