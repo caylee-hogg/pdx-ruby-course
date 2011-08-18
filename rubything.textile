@@ -1,26 +1,30 @@
 % INTRODUCE COMMENTS AT SOME POINT
 % INTRODUCE STRING INTERPOLATION
 
+h1. Learning Ruby and Rails
+
+Good morning!
+
 h1. Outline of the Day
 
-* 10:00-11:30 Introduction to Ruby
-* 11:30-Noon Ruby Koans
-* Noon-1:00 Lunch
-* 1:00-2:45 Rails
-* 2:45-3:00 Break
-* 3:00-4:30 Rails
-* 4:30 What Next?
+* 10:00-11:30 *Introduction to Ruby*
+* 11:30-Noon *Ruby Koans*
+* Noon-1:00 *Lunch*
+* 1:00-2:45 *Rails*
+* 2:45-3:00 *Break*
+* 3:00-4:30 *Rails part 2*
+* 4:30 *What Next?*
 
 h1. What We'll Cover
 
 * Basic concepts of programming
 * Syntax and simple operations of Ruby
-* Objects, classes, and methods
+** Objects, classes, and methods
 * An introduction to Rails
-* How to use Rails machinery to manipulate application data
-* Data validation in Rails
-* Displaying data in Rails
-* Using scaffolding to start a simple application
+** How to use Rails machinery to manipulate application data
+** Data validation in Rails
+** Displaying data in Rails
+** Using scaffolding to start a simple application
 
 h1. What Is Programming?
 
@@ -39,16 +43,16 @@ h1. What Is Programming?
 h1. What Is a Programming Language?
 
 * A human readable format for describing computations
-% * Compilers or interpreters convert human-readable text to machine-readable
 * Any language can describe the same computations
 * Different languages are really just a different vocabulary
-% * Different vocabularies offer different ways of expressing an idea: like human languages, each programming language makes some things easy to "say" and some things harder
+% * Compilers or interpreters convert human-readable text to machine-readable %
+% * Different vocabularies offer different ways of expressing an idea: like human languages, each programming language makes some things easy to "say" and some things harder %
 
 h1. Why Ruby?
 
 * It's easy to learn
 * Portland has a strong Ruby community
-* Rails is a framework built on Ruby
+* Rails is a popular web framework built on Ruby
 * Rails gives Ruby a good, simple, vocabulary for web development
 
 h1. Starting Ruby
@@ -59,8 +63,7 @@ Open a terminal window. Type "irb" and hit enter.
 
 Try entering a few things: 
 
-bc.
-1
+bc. 1
 4 + 3 
 "hat" 
 [1, 2, 3, "happy"].each { |i| puts i }
@@ -69,21 +72,16 @@ bc.
 
 Use the up and down arrow keys to navigate back and forth through the previous commands you've entered.
 
-% Okay, so one thing we need to do here is figure out just exactly what we'll
-% do with respect to TryRuby. We can't, in some sense, just have people follow
-% along at home because there's all sorts of cute stuff it does with an
-% that we can't just replicate easily
-
 h1. Basic Ruby Data
 
 % TODO more tabley
 
-|Numbers | @1@, @2@, @3@|
+|Numbers | @1@, @2@, @3@ |
 |Strings | @"chicken"@ |
-|Booleans| @true@, @false@|
+|Booleans| @true@, @false@ |
 |Symbols | @:chicken@ |
-|Arrays | @[1, 7, "cake"]@|
-|Hashes  | @{:chicken => "chicken", :sillyexample => :chicken}@|
+|Arrays  | @[1, 7, "cake"]@ |
+|Hashes  | @{:chicken => "chicken", :sillyexample => :chicken}@ |
 
 Type these at the command line! What happens?
 
@@ -179,8 +177,9 @@ h1. That's Nice But...
 
 * How do we combine steps or use the result of an action?
 * Variables name particular values
-* @var1 = 4@
-* @var2 = "chicken"@
+
+bc. var1 = 4
+var2 = "chicken"
 
 Try typing the following, noting what happens at each step 
 
@@ -193,7 +192,7 @@ thing = thing.reverse
 h1. Changing variables
 
 * @thing.reverse@ didn't permanently reverse the string!
-* Had to *set* the value with another assignment statement
+* We had to *set* the value with another assignment statement
 * Some functions do change state
 
 Try 
