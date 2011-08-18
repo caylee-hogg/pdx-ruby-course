@@ -430,16 +430,11 @@ Good places to start: Array, Enumerable, Fixnum, Float, Hash, NilClass, String, 
 
 h1. Blocks
 
-% TODO flip this slide and introduce blocks by example first then explain what
+% introduce blocks by example first then explain what
 % they are - have other examples of block usage first, sort_by and map as
 % well as just each
 % pull up array documentation or something like that in terms of showing
 % OH HAI some methods take blocks
-
-* A *block* is a computation, but *not* a method
-* A block is of the form @{ |arg1, arg2, ..| code }@
-* @{ |v| v.palindrome? }@
-* @{ |x, y| x * y }@
 
 Some methods take blocks.
 
@@ -447,6 +442,11 @@ Some methods take blocks.
 
 bc. list = [1,2,3,4]
 list.each { |n| n + 1 }
+
+* A *block* is a computation, but *not* a method
+* A block is of the form @{ |arg1, arg2, ..| code }@
+* @{ |v| v.palindrome? }@
+* @{ |x, y| x * y }@
 
 h1. Blocks
 
@@ -492,17 +492,18 @@ end
 
 h1. Control Structures
 
-% TODO NO WHILE
+Case statements evaluate a statement and execute the code in the corresponding branch:
 
-While statements allow repetition:
-
-bc. i = 0
-c = Counter.new
-while i < 10
-  c.increment
-  i = i + 1
+bc. case favorite_color
+when "green"
+  puts "Grass is green"
+when "blue"
+  puts "Skies are blue"
+when "red"
+  puts "Tomatoes are red"
+else
+  puts "Are you sure that's a color?"
 end
-c.value
 
 h1. Control Structures
 
