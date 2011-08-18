@@ -306,20 +306,61 @@ h1. Classes & Methods
 
 Let's learn the syntax by example:
 
-% TODO do bc.. to make it formatted more better
-% TODO break this out into a series of pieces of defining more and more
-% pieces. We can explain the whole thing piecemeal and then end
-% with modifying incremement to take an argument and add n instead of 1
+bc.. class Counter
+end
 
-bc. class Counter 
-  attr_accessor :value
+% Step 1 %
+
+h1. Classes & Methods
+
+Let's learn the syntax by example:
+
+bc.. class Counter
+
   def initialize
     @value = 0
   end
+
+end
+
+% Step 2 %
+
+h1. Classes & Methods
+
+Let's learn the syntax by example:
+
+bc.. class Counter
+
+  def initialize
+    @value = 0
+  end
+
   def increment
     @value = @value + 1
   end
+
 end
+
+% Step 3 %
+
+h1. Classes & Methods
+
+Let's learn the syntax by example:
+
+bc.. class Counter
+  attr_accessor :value
+
+  def initialize
+    @value = 0
+  end
+
+  def increment
+    @value = @value + 1
+  end
+
+end
+
+% Step 4 %
 
 h1. Classes
 
@@ -329,7 +370,8 @@ bc. count = Counter.new
 count.increment
 count.increment
 count.value
-count.class
+
+bc. count.class
 count.methods
 
 % change to use respond_to? , have a note about what respond_to? does in speech
@@ -357,7 +399,8 @@ bc. class String
     self == "chicken"
   end
 end
-"chicken".chicken?
+
+bc. "chicken".chicken?
 "puppy".chicken?
 
 @self@ is a way of referring to the object that the method is being called on.
