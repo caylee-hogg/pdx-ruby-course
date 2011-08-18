@@ -624,11 +624,34 @@ Creating a rant that way was verbose. Is there a better way?
 
 Notice that you don't need to save when you use @create@--it combines @new@ and @save@ into a single action.
 
+h1. Looking at models
+
+Open up the user.rb and rant.rb model files.
+
+bc.. class Rant < ActiveRecord::Base
+
+  belongs_to :user
+
+  validates_presence_of :user, :message
+  validates_length_of :message, :maximum => 10
+
+end
+
+class User < ActiveRecord::Base
+
+  has_many :rants
+  
+  validates_presence_of :name
+
+end
+
+% Instructor should walk through what each part of the model does, including explaining belongs_to and has_many associations %
+
 h1. Exercises
 
 Some people are writing in lowercase! This won't do!
 
-Let's write a method that can convert all lowercase rants to uppercase! First, go find the rant.rb file in your Rails models directory.
+Let's write a method that can convert all lowercase rants to uppercase. First, go find the rant.rb file in your Rails models directory.
 
 bc. class Rant < ActiveRecord::Base
 before_save :convert_message_to_uppercase
@@ -643,22 +666,38 @@ h1. Exercises
 
 Sometimes you want to work with your data in a different format. Go back to the Rails console and write a program that creates a hash that contains rant messages paired with user names.
 
-Bonus exercise: amend your code to print out each pair in a formatted string (you'll need an iteration loop like for..each and the Ruby function @puts@ to print out each line).
+How do you create a new Hash again?
+* Earlier we saw @Hash.new@, but @{}@ is a simpler way.
+* Try @new_hash = {}@
+
+The result should look like:
+
+bc. => {"RANTING!"=>"caylee", "WTF"=>"audrey"}
+
+Can you use an iterator to print this out as a series of formatted strings?
+
+% Bonus exercise: amend your code to print out each pair in a formatted string (you'll need an iteration loop like for..each and the Ruby function @puts@ to print out each line). %
 
 % TODO NOTE - have example output for the exercises, more guidance for how to get
 % started, e.g. showing how to define the Hash
 
+h1. Callbacks
+
+The @before_save@ code we wrote earlier uses a *callback*. Rails defines several callbacks that allow you to change the input to a model before or after actions like save, create, update, and delete.
+
+bc. before_save :geocode_address
+after_create :notify_admins
+before_validate :check_over_some_other_details
+
 h1. Quality Control
-
-% TODO split into two slides
-% callback slide, slide on validations - explain validations as constraints
-% example code with validations/showing actual code
-
-The @before_save@ code we wrote earlier uses a *callback*. Rails defines several callbacks that allow you to change the input to a model before or after actions like save, create, update, and delete. There's also another kind of callback called a validation.
 
 Validations provide an easy wrapper for checking that a particular attribute is present, in the right format, or other requirements before the application will save the data. The microblog application already contains some of these. Look at the Rant and User models to see the ones we've included.
 
 Can you think of other validations you'd like to add? Try changing the length of a valid Rant message.
+
+% TODO split into two slides [DONE]
+% callback slide, slide on validations - explain validations as constraints
+% example code with validations/showing actual code
 
 h1. Displaying the data
 
@@ -680,8 +719,6 @@ Go to /app/views/rants/ and open the index.html file. By default, the scaffolder
 
 h1. Exercises
 
-% TODO Need to explain has_many and all that jazz sometime before then
-
 On the users index page, let's add a column to the table to show how many rants each person has written. ActiveRecord makes this easy by providing a method called @count@ that you can add to a collection of records to get the database count instead of the full records. For example, @User.count@ or @Rants.count@.
 
 These also work through has_many associations, so given a particular user record, you could try @user.kittens.count@ or @user.books.count@ (if those associations existed) or ...
@@ -690,7 +727,11 @@ These also work through has_many associations, so given a particular user record
 % and a message that says "Congrats, <name>, you're the angriest person here!"
 % AE note - this might be a good one for people moving fast, but the way I would probably recommend doing it is involved enough I'd keep this as a bonus exercise only %
 
-% TODO ADD CONTENT ON ROUTES
+h1. Routes
+
+How does Rails know what page to go to when you visit "http://localhost:3000/rants/new":http://localhost:3000/rants/new ?
+
+Open /config/routes.rb to see how this works.
 
 h1. What about the C in MVC?
 
