@@ -278,6 +278,7 @@ Let's use our Counter class:
 bc. count = Counter.new
 count.increment
 count.increment
+count.value
 count.class
 count.methods
 
@@ -601,7 +602,7 @@ h1. Next Steps
 * Get involved in the local Ruby "user group":http://pdxruby.org/
 * Start coming to "Code-n-Splode":http://codeandsplode.org/
 
-%what else should go here?
+% what else should go here?
 
 h1. Stepping outside
 
