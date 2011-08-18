@@ -620,7 +620,7 @@ h1. At The Console
 
 Creating a rant that way was verbose. Is there a better way?
 
-@Rant.create(:message => "E POINT!?", :user_id => 1)@
+@User.find(1).rants.create(:message => "E POINT!?")@
 
 Notice that you don't need to save when you use @create@--it combines @new@ and @save@ into a single action.
 
