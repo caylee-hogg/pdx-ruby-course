@@ -280,7 +280,7 @@ h1. Objects
 
 % TODO better term for piece
 
-An object is a piece of data along with the methods, computations, that
+An object is data along with the methods, computations, that
 can operate on it.
 
 Everything in Ruby is an object: numbers, strings, hashes, etc.
@@ -291,7 +291,7 @@ How do you know what kind of object something is? Ask!
 
 What *is* a class?
 
-h1. Classes & Methods
+h1. Classes
 
 % TODO wording of templates, descriptions
 
@@ -309,6 +309,10 @@ Let's learn the syntax by example:
 bc.. class Counter
 end
 
+p. What can we do with @Counter@?
+
+@c = Counter.new@
+
 % Step 1 %
 
 h1. Classes & Methods
@@ -316,32 +320,40 @@ h1. Classes & Methods
 Let's learn the syntax by example:
 
 bc.. class Counter
-
-  def initialize
-    @value = 0
-  end
+attr_accessor :value
 
 end
 
-% Step 2 %
+p. Now try
+
+bc. c = Counter.new
+c.value
+c.value = 10
+c.value
+
+What happened? What does @attr_accessor :value@ do?
 
 h1. Classes & Methods
 
 Let's learn the syntax by example:
 
 bc.. class Counter
+  attr_accessor :value
 
   def initialize
     @value = 0
   end
 
-  def increment
-    @value = @value + 1
-  end
-
 end
 
-% Step 3 %
+p. Now, again, try
+
+bc. c = Counter.new
+c.value
+
+@initialize@ gives @new@ instructions on how to create an object
+
+% Step 2 %
 
 h1. Classes & Methods
 
@@ -378,17 +390,25 @@ count.methods
 
 Try @count.respond_to?(increment)@. What did you see?
 
-h1. Classes
+h1. Class Exercise
 
-% TODO: Need to revisit this part and clean up explanation
+Let's add a @Counter.increment_by@ method that takes an *argument* for how much to increment.
 
-What was @attr_accessor@? It's a way of declaring data contained
-in objects and providing ways to use it.
+Don't need to start all over - we *open* the class instead
 
-Thus @attr_accessor :value@ means that:
+bc.. class Counter
 
-* Every counter holds a piece of data named @@value@
-* Outside of the class, @@value@ can be accessed as @c.value@ and @c.value = 5@
+def increment_by(n)
+  # fill in here
+end
+
+end
+
+p. Test your code as follows:
+
+bc. c = Counter.new
+c.increment_by(5)
+c.value
 
 h1. Classes
 
@@ -422,8 +442,6 @@ and finish the rest! Test it on @"abba".palindrome?@ and @"puppy".palindrome?@
 
 h1. Learn more about common Ruby classes
 
-% TODO add new methods to your counter class!
-
 "http://rubydoc.info/stdlib/core/":http://rubydoc.info/stdlib/core
 
 Good places to start: Array, Enumerable, Fixnum, Float, Hash, NilClass, String, Time
@@ -441,7 +459,7 @@ Some methods take blocks.
 @list.each {|p| code}@ runs @code@ on every element of @list@
 
 bc. list = [1,2,3,4]
-list.each { |n| n + 1 }
+list.each { |n| puts (n + 1) }
 
 * A *block* is a computation, but *not* a method
 * A block is of the form @{ |arg1, arg2, ..| code }@
@@ -783,4 +801,3 @@ h1. Next Steps
 
 h1. Stepping outside
 
-(Reid will talk about the wider ecosystem and what to expect, etc.)
