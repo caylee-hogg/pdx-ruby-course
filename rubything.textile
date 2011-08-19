@@ -634,14 +634,12 @@ h1. Where's My Stuff
 
 Rails models have built-in finder methods that help you retrieve records from the database.
 
-% TODO upgrade to rails3 syntax
-
 Try:
 * @Rant.all@
+* @Rant.order("created_at DESC")@
 * @Rant.first@
-* @Rant.find(:all, :user_id => 1)@
-* @Rant.all(:user_id => 1)@
-* @Rant.find_by_user_id(1)@
+* @Rant.where("user_id = 1")@
+* @Rant.where(:user_id => 1)@
 
 h1. At the Console
 
