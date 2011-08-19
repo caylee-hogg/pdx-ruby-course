@@ -177,9 +177,32 @@ h1. That's Nice But...
 
 * How do we combine steps or use the result of an action?
 * Variables name particular values
+* The same variable can be set to different values at different times
 
 bc. var1 = 4
+var1
 var2 = "chicken"
+var2
+var2 = var1
+var2
+
+h1. Interlude: String Interpolation
+
+Something you might want to do is print out a string that has a value
+contained within it.
+
+For example, try typing
+
+@"Our array is #{[1,2,3]}"@
+
+Most useful when dealing with variables!
+
+bc. var = [1,2,3,4,5,6]
+"Our array is #{var}"
+
+Now back to variables!
+
+h1. Variables
 
 Try typing the following, noting what happens at each step 
 
@@ -189,7 +212,7 @@ thing.reverse
 thing
 thing = thing.reverse
 
-h1. Changing variables
+h1. Variables
 
 * @thing.reverse@ didn't permanently reverse the string!
 * We had to *set* the value with another assignment statement
@@ -388,7 +411,7 @@ count.methods
 
 % change to use respond_to? , have a note about what respond_to? does in speech
 
-Try @count.respond_to?(increment)@. What did you see?
+Try @count.respond_to?("increment")@. What did you see?
 
 h1. Class Exercise
 
