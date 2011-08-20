@@ -799,10 +799,10 @@ r.save</code></pre>
 <p>Try:</p>
 <ul>
 	<li><code>Rant.all</code></li>
+	<li><code>Rant.order("created_at DESC")</code></li>
 	<li><code>Rant.first</code></li>
-	<li><code>Rant.find(:all, :user_id =&gt; 1)</code></li>
-	<li><code>Rant.all(:user_id =&gt; 1)</code></li>
-	<li><code>Rant.find_by_user_id(1)</code></li>
+	<li><code>Rant.where("user_id = 1")</code></li>
+	<li><code>Rant.where(:user_id =&gt; 1)</code></li>
 </ul>
 
 </div>
