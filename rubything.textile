@@ -1,5 +1,24 @@
-% INTRODUCE COMMENTS AT SOME POINT
-% INTRODUCE STRING INTERPOLATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Start off with some headers
+
+Title: Ruby/Rails Workshop
+Author: Stumptown Syndicate and friends
+Generator: text
+
+%css
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.slide h2 {
+    font-size: 24pt;
+}
+
+%end
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Start Presentation
 
 h1. Learning Ruby and Rails
 
