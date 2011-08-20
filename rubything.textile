@@ -195,7 +195,7 @@ h1. Basic Ruby Computations
 | @[1, 2, 3].include?(2)@ | | @true@ |
 
 What do you think @"chicken".reverse.length@ does?
-What about @"puppy".include?('p')@?
+What about @"puppy".include?("p")@?
 
 h1. That's Nice But...
 
