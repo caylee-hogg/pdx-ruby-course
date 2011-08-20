@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>Untitled Slide Show</title>
+   
+   
+
+<style>
+html, body { margin: 0; padding: 0; }
+
+body { font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; }
+
+a:link, a:visited { color: black; }
+
+h1 { font-size: 30pt;  }
+h2 { font-size: 28pt;  }
+h3 { font-size: 25pt;  }
+p, li, dt, dd, td, th { font-size: 18pt; }
+
+pre { font-size: 14pt;  }
+pre.small { font-size: 11pt; }
+
+pre.code {
+        background-color: azure;
+        padding: 5px;
+      }
+     
+ul { list-style-type: square; }    
+   
+.center { text-align: center; }   
+     
+.slide { page-break-after: always;
+         min-height: 100mm;
+         padding: 40px;
+         
+         border: 1px dotted black;
+
+/*      
+  background: -moz-linear-gradient( top, maroon, red);
+*/
+       }
+
+
+
+/*
+for princexml (CSS3 paged media support)
+@page { size: A4 landscape }
+*/
+</style>
+
+</head>
+<body>
+
+<div class="presentation">
+
+<div class='slide '>
+<h1>Learning Ruby and Rails</h1><p>Good morning!</p>
+
+</div>
+<div class='slide '>
+<h1>Outline of the Day</h1><ul>
+	<li>10:00-11:30 <strong>Introduction to Ruby</strong></li>
+	<li>11:30-Noon <strong>Ruby Koans</strong></li>
+	<li>Noon-1:00 <strong>Lunch</strong></li>
+	<li>1:00-2:45 <strong>Rails</strong></li>
+	<li>2:45-3:00 <strong>Break</strong></li>
+	<li>3:00-4:30 <strong>Rails part 2</strong></li>
+	<li>4:30 <strong>What Next?</strong></li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>What We&#8217;ll Cover</h1><ul>
+	<li>Basic concepts of programming</li>
+	<li>Syntax and simple operations of Ruby
+	<ul>
+		<li>Objects, classes, and methods</li>
+	</ul></li>
+	<li>An introduction to Rails
+	<ul>
+		<li>How to use Rails machinery to manipulate application data</li>
+		<li>Data validation in Rails</li>
+		<li>Displaying data in Rails</li>
+		<li>Using scaffolding to start a simple application</li>
+	</ul></li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>What Is Programming?</h1><ul>
+	<li>Programming is the act of writing programs</li>
+	<li>A program is a precise, text-based, description of how to perform a <strong>computation</strong> on <strong>data</strong></li>
+	<li>Data
+	<ul>
+		<li>Numbers</li>
+		<li>Strings: pieces of text</li>
+		<li>Lists of things</li>
+		<li>Booleans: true and false</li>
+	</ul></li>
+	<li>Computations
+	<ul>
+		<li>Add 3 and 4</li>
+		<li>Find the largest number in a list of numbers</li>
+		<li>Contact Trimet&#8217;s network and find the most convenient bus route</li>
+	</ul></li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>What Is a Programming Language?</h1><ul>
+	<li>A human readable format for describing computations</li>
+	<li>Any language can describe the same computations</li>
+	<li>Different languages are really just a different vocabulary</li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>Why Ruby?</h1><ul>
+	<li>It&#8217;s easy to learn</li>
+	<li>Portland has a strong Ruby community</li>
+	<li>Rails is a popular web framework built on Ruby</li>
+	<li>Rails gives Ruby a good, simple, vocabulary for web development</li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>Starting Ruby</h1><p>Open a terminal window. Type &#8220;irb&#8221; and hit enter.</p>
+<p>Try entering a few things:</p>
+<pre><code>1
+4 + 3 
+"hat" 
+[1, 2, 3, "happy"].each { |i| puts i }</code></pre>
+<p><code>&gt;&gt;</code> is your prompt to enter text and <code>=&gt;</code> will appear at the start of each response.</p>
+<p>Use the up and down arrow keys to navigate back and forth through the previous commands you&#8217;ve entered.</p>
+
+</div>
+<div class='slide '>
+<h1>Basic Ruby Data</h1><table>
+	<tr>
+		<td>Numbers </td>
+		<td> <code>1</code>, <code>2</code>, <code>3</code> </td>
+	</tr>
+	<tr>
+		<td>Strings </td>
+		<td> <code>"chicken"</code> </td>
+	</tr>
+	<tr>
+		<td>Booleans</td>
+		<td> <code>true</code>, <code>false</code> </td>
+	</tr>
+	<tr>
+		<td>Symbols </td>
+		<td> <code>:chicken</code> </td>
+	</tr>
+	<tr>
+		<td>Arrays  </td>
+		<td> <code>[1, 7, "cake"]</code> </td>
+	</tr>
+	<tr>
+		<td>Hashes  </td>
+		<td> <code>{:chicken =&gt; "chicken", :sillyexample =&gt; :chicken}</code> </td>
+	</tr>
+</table>
+<p>Type these at the command line! What happens?</p>
+<p>That&#8217;s the data, where are the computations?</p>
+
+</div>
+<div class='slide '>
+<h1>Basic Ruby Computations</h1><table>
+	<tr>
+		<td> <code>2 + 2</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>3 * 3</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".reverse</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".length</code>  </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 4</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 5</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>[1 , 2, 3].include?(2)</code> </td>
+		<td> </td>
+		<td> </td>
+	</tr>
+</table>
+
+</div>
+<div class='slide '>
+<h1>Basic Ruby Computations</h1><table>
+	<tr>
+		<td> <code>2 + 2</code> </td>
+		<td> <code>4</code> </td>
+	</tr>
+	<tr>
+		<td> <code>3 * 3</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".reverse</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".length</code>  </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 4</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 5</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>[1 , 2, 3].include?(2)</code> </td>
+		<td> </td>
+		<td> </td>
+	</tr>
+</table>
+
+</div>
+<div class='slide '>
+<h1>Basic Ruby Computations</h1><table>
+	<tr>
+		<td> <code>2 + 2</code> </td>
+		<td> <code>4</code> </td>
+	</tr>
+	<tr>
+		<td> <code>3 * 3</code> </td>
+		<td> <code>9</code> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".reverse</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".length</code>  </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 4</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 5</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>[1 , 2, 3].include?(2)</code> </td>
+		<td> </td>
+		<td> </td>
+	</tr>
+</table>
+
+</div>
+<div class='slide '>
+<h1>Basic Ruby Computations</h1><table>
+	<tr>
+		<td> <code>2 + 2</code> </td>
+		<td> <code>4</code> </td>
+	</tr>
+	<tr>
+		<td> <code>3 * 3</code> </td>
+		<td> <code>9</code> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".reverse</code> </td>
+		<td> <code>"nekcihc"</code> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".length</code>  </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 4</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 5</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>[1 , 2, 3].include?(2)</code> </td>
+		<td> </td>
+		<td> </td>
+	</tr>
+</table>
+
+</div>
+<div class='slide '>
+<h1>Basic Ruby Computations</h1><table>
+	<tr>
+		<td> <code>2 + 2</code> </td>
+		<td> <code>4</code> </td>
+	</tr>
+	<tr>
+		<td> <code>3 * 3</code> </td>
+		<td> <code>9</code> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".reverse</code> </td>
+		<td> <code>"nekcihc"</code> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".length</code>  </td>
+		<td> <code>7</code> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 4</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 5</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>[1 , 2, 3].include?(2)</code> </td>
+		<td> </td>
+		<td> </td>
+	</tr>
+</table>
+
+</div>
+<div class='slide '>
+<h1>Basic Ruby Computations</h1><table>
+	<tr>
+		<td> <code>2 + 2</code> </td>
+		<td> <code>4</code> </td>
+	</tr>
+	<tr>
+		<td> <code>3 * 3</code> </td>
+		<td> <code>9</code> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".reverse</code> </td>
+		<td> <code>"nekcihc"</code> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".length</code>  </td>
+		<td> <code>7</code> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 4</code> </td>
+		<td> <code>true</code> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 5</code> </td>
+		<td> </td>
+	</tr>
+	<tr>
+		<td> <code>[1, 2, 3].include?(2)</code> </td>
+		<td> </td>
+		<td> </td>
+	</tr>
+</table>
+
+</div>
+<div class='slide '>
+<h1>Basic Ruby Computations</h1><table>
+	<tr>
+		<td> <code>2 + 2</code> </td>
+		<td> <code>4</code> </td>
+	</tr>
+	<tr>
+		<td> <code>3 * 3</code> </td>
+		<td> <code>9</code> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".reverse</code> </td>
+		<td> <code>"nekcihc"</code> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".length</code>  </td>
+		<td> <code>7</code> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 4</code> </td>
+		<td> <code>true</code> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 5</code> </td>
+		<td> <code>false</code> </td>
+	</tr>
+	<tr>
+		<td> <code>[1, 2, 3].include?(2)</code> </td>
+		<td> </td>
+		<td>  </td>
+	</tr>
+</table>
+
+</div>
+<div class='slide '>
+<h1>Basic Ruby Computations</h1><table>
+	<tr>
+		<td> <code>2 + 2</code> </td>
+		<td> <code>4</code> </td>
+	</tr>
+	<tr>
+		<td> <code>3 * 3</code> </td>
+		<td> <code>9</code> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".reverse</code> </td>
+		<td> <code>"nekcihc"</code> </td>
+	</tr>
+	<tr>
+		<td> <code>"chicken".length</code>  </td>
+		<td> <code>7</code> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 4</code> </td>
+		<td> <code>true</code> </td>
+	</tr>
+	<tr>
+		<td> <code>2 + 2 == 5</code> </td>
+		<td> <code>false</code> </td>
+	</tr>
+	<tr>
+		<td> <code>[1, 2, 3].include?(2)</code> </td>
+		<td> </td>
+		<td> <code>true</code> </td>
+	</tr>
+</table>
+<p>What do you think <code>"chicken".reverse.length</code> does?
+What about <code>"puppy".include?('p')</code>?</p>
+
+</div>
+<div class='slide '>
+<h1>That&#8217;s Nice But&#8230;</h1><ul>
+	<li>How do we combine steps or use the result of an action?</li>
+	<li>Variables name particular values</li>
+	<li>The same variable can be set to different values at different times</li>
+</ul>
+<pre><code>var1 = 4
+var1
+var2 = "chicken"
+var2
+var2 = var1
+var2</code></pre>
+
+</div>
+<div class='slide '>
+<h1>Interlude: String Interpolation</h1><p>Something you might want to do is print out a string that has a value
+contained within it.</p>
+<p>For example, try typing</p>
+<p><code>"Our array is #{[1,2,3]}"</code></p>
+<p>Most useful when dealing with variables!</p>
+<pre><code>var = [1,2,3,4,5,6]
+"Our array is #{var}"</code></pre>
+<p>Now back to variables!</p>
+
+</div>
+<div class='slide '>
+<h1>Variables</h1><p>Try typing the following, noting what happens at each step</p>
+<pre><code>thing = "chicken"
+thing
+thing.reverse
+thing
+thing = thing.reverse</code></pre>
+
+</div>
+<div class='slide '>
+<h1>Variables</h1><ul>
+	<li><code>thing.reverse</code> didn&#8217;t permanently reverse the string!</li>
+	<li>We had to <strong>set</strong> the value with another assignment statement</li>
+	<li>Some functions do change state</li>
+</ul>
+<p>Try</p>
+<pre><code>awesomelist = [5,2,1,8]
+awesomelist.sort!
+awesomelist</code></pre>
+<p>How did that happen? Actions that end with a <code>!</code> <strong>change</strong> the data!
+This is a Ruby convention, but a good one to follow.</p>
+
+</div>
+<div class='slide '>
+<h1>Hashes</h1><p>Let&#8217;s consider a book rating system:</p>
+<ul>
+	<li>We use numeric values 0-5 to represent a book that you&#8217;ve read</li>
+	<li>:not_rated will represent a book that you haven&#8217;t rated</li>
+	<li>We&#8217;ll store all this data in a hash</li>
+</ul>
+<p>Fill in a hash with some books, e.g.</p>
+<pre><code>books = { "Left Hand of Darkness"        =&gt; 5,
+          "The Word for World Is Forest" =&gt; 5,
+          "Nevermind the Pollacks"       =&gt; 0,
+          "Only Revolutions"             =&gt; :not_rated }</code></pre>
+
+</div>
+<div class='slide '>
+<h1>Hashes</h1><p>We can retrieve the rating for a particular book like so</p>
+<p><code>books["Left Hand of Darkness"]</code></p>
+<p>We can also <strong>set</strong> values like so</p>
+<p><code>books["Only Revolutions"] = 3</code></p>
+<p>How can we add a rating for a new book? Any guesses?</p>
+
+</div>
+<div class='slide '>
+<h1>Hashes</h1><p>We can retrieve the rating for a particular book like so</p>
+<p><code>books["Left Hand of Darkness"]</code></p>
+<p>We can also <strong>set</strong> values like so</p>
+<p><code>books["Only Revolutions"] = 3</code></p>
+<p>How can we add a rating for a new book? Any guesses?</p>
+<p>We set the value of the book just like before!</p>
+<p><code>books["White Teeth"] = 4</code></p>
+<p>Now type <code>books</code> to see the whole hash.</p>
+
+</div>
+<div class='slide '>
+<h1>Let&#8217;s Try Something</h1><p><code>40.reverse</code></p>
+<p>What happens?</p>
+
+</div>
+<div class='slide '>
+<h1>Let&#8217;s Try Something</h1><p><code>40.reverse</code></p>
+<p>What happens?</p>
+<p>Ruby just reported <code>NoMethodError: undefined method `reverse' for 40:Fixnum</code></p>
+<p>That means that <code>reverse</code> is not something you can do to the number 40.</p>
+
+</div>
+<div class='slide '>
+<h1>Methods</h1><p>Most computations in Ruby are performed by <strong>methods</strong>.
+Type <code>40.methods</code> to see which methods are available for basic numbers.</p>
+<p>Notice <code>+</code>, <code>-</code>, et al. in the list?</p>
+<p>What about <code>"chicken".methods</code> ?</p>
+
+</div>
+<div class='slide '>
+<h1>Objects</h1><p>An object is data along with the methods, computations, that
+can operate on it.</p>
+<p>Everything in Ruby is an object: numbers, strings, hashes, etc.</p>
+<p>How do you know what kind of object something is? Ask!</p>
+<p><code>40.class</code></p>
+<p>What <strong>is</strong> a class?</p>
+
+</div>
+<div class='slide '>
+<h1>Classes</h1><ul>
+	<li>Classes are templates for making objects</li>
+	<li>Classes create different types of objects
+	<ul>
+		<li>All numbers can be added</li>
+		<li>All strings can be reversed</li>
+	</ul></li>
+	<li>They define kinds of data and methods on that data</li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>Classes &amp; Methods</h1><p>Let&#8217;s learn the syntax by example:</p>
+<pre><code>class Counter
+end</code></pre>
+<p>What can we do with <code>Counter</code>?</p>
+<p><code>c = Counter.new</code></p>
+
+</div>
+<div class='slide '>
+<h1>Classes &amp; Methods</h1><p>Let&#8217;s learn the syntax by example:</p>
+<pre><code>class Counter
+attr_accessor :value</code>
+
+<code>end</code></pre>
+<p>Now try</p>
+<pre><code>c = Counter.new
+c.value
+c.value = 10
+c.value</code></pre>
+<p>What happened? What does <code>attr_accessor :value</code> do?</p>
+
+</div>
+<div class='slide '>
+<h1>Classes &amp; Methods</h1><p>Let&#8217;s learn the syntax by example:</p>
+<pre><code>class Counter
+  attr_accessor :value</code>
+
+<code>  def initialize
+    @value = 0
+  end</code>
+
+<code>end</code></pre>
+<p>Now, again, try</p>
+<pre><code>c = Counter.new
+c.value</code></pre>
+<p><code>initialize</code> gives <code>new</code> instructions on how to create an object</p>
+
+</div>
+<div class='slide '>
+<h1>Classes &amp; Methods</h1><p>Let&#8217;s learn the syntax by example:</p>
+<pre><code>class Counter
+  attr_accessor :value</code>
+
+<code>  def initialize
+    @value = 0
+  end</code>
+
+<code>  def increment
+    @value = @value + 1
+  end</code>
+
+<code>end</code></pre>
+
+</div>
+<div class='slide '>
+<h1>Classes</h1><p>Let&#8217;s use our Counter class:</p>
+<pre><code>count = Counter.new
+count.increment
+count.increment
+count.value</code></pre>
+<pre><code>count.class
+count.methods</code></pre>
+<p>Try <code>count.respond_to?("increment")</code>. What did you see?</p>
+
+</div>
+<div class='slide '>
+<h1>Class Exercise</h1><p>Let&#8217;s add a <code>Counter.increment_by</code> method that takes an <strong>argument</strong> for how much to increment.</p>
+<p>Don&#8217;t need to start all over &#8211; we <strong>open</strong> the class instead</p>
+<pre><code>class Counter</code>
+
+<code>def increment_by(n)
+  # fill in here
+end</code>
+
+<code>end</code></pre>
+<p>Test your code as follows:</p>
+<pre><code>c = Counter.new
+c.increment_by(5)
+c.value</code></pre>
+
+</div>
+<div class='slide '>
+<h1>Classes</h1><p>You can add methods to existing classes as well:</p>
+<pre><code>class String
+  def chicken?
+    self == "chicken"
+  end
+end</code></pre>
+<pre><code>"chicken".chicken?
+"puppy".chicken?</code></pre>
+<p><code>self</code> is a way of referring to the object that the method is being called on.</p>
+<p>In <code>"puppy".chicken?</code>, <code>self</code> is <code>"puppy"</code>.</p>
+
+</div>
+<div class='slide '>
+<h1>Classes Exercise</h1><p>Add a method to String that will test to see if a string is a palindrome.</p>
+<p>A palindrome is any string that is the same read forwards or backwards.</p>
+<p>To get you started type the following at the command line:</p>
+<pre><code>class String
+  def palindrome?</code></pre>
+<p>and finish the rest! Test it on <code>"abba".palindrome?</code> and <code>"puppy".palindrome?</code></p>
+
+</div>
+<div class='slide '>
+<h1>Learn more about common Ruby classes</h1><p><a href="http://rubydoc.info/stdlib/core">http://rubydoc.info/stdlib/core/</a></p>
+<p>Good places to start: Array, Enumerable, Fixnum, Float, Hash, NilClass, String, Time</p>
+
+</div>
+<div class='slide '>
+<h1>Blocks</h1><p>Some methods take blocks.</p>
+<p><code>list.each {|p| code}</code> runs <code>code</code> on every element of <code>list</code></p>
+<pre><code>list = [1,2,3,4]
+list.each { |n| puts (n + 1) }</code></pre>
+<ul>
+	<li>A <strong>block</strong> is a computation, but <strong>not</strong> a method</li>
+	<li>A block is of the form <code>{ |arg1, arg2, ..| code }</code></li>
+	<li><code>{ |v| v.palindrome? }</code></li>
+	<li><code>{ |x, y| x * y }</code></li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>Blocks</h1><p>A more complicated example of using each:</p>
+<pre><code>reviews = Hash.new(0)
+books.values.each { |rate| reviews[rate] = reviews[rate] + 1 }
+reviews</code></pre>
+<p><code>reviews</code> is a count of how many reviews you gave with a particular rating</p>
+<p><code>reviews[5]</code></p>
+
+</div>
+<div class='slide '>
+<h1>Blocks</h1><p>There&#8217;s another way to write blocks. This is commonly used for multi-line expressions.</p>
+<pre><code>reviews = Hash.new(0)
+books.values.each do |rate|
+  reviews[rate] = reviews[rate] + 1
+  # more code can go here...
+end</code></pre>
+
+</div>
+<div class='slide '>
+<h1>Control Structures</h1><p>Ruby provides control structures for writing more complicated code.</p>
+<p>If statements are a switch on whether the argument is true or false.</p>
+<pre><code>if true
+  1
+else 
+  2
+end</code></pre>
+<pre><code>if false
+  1
+else 
+  2
+end</code></pre>
+
+</div>
+<div class='slide '>
+<h1>Control Structures</h1><p>Case statements evaluate a statement and execute the code in the corresponding branch:</p>
+<pre><code>case favorite_color
+when "green"
+  puts "Grass is green"
+when "blue"
+  puts "Skies are blue"
+when "red"
+  puts "Tomatoes are red"
+else
+  puts "Are you sure that's a color?"
+end</code></pre>
+
+</div>
+<div class='slide '>
+<h1>Control Structures</h1><p>For-in statements allow iteration over a structure such as a list</p>
+<pre><code>list = [1,2,3,4,5]
+sum = 0
+for n in list
+  sum = sum + n
+end
+sum</code></pre>
+
+</div>
+<div class='slide '>
+<h1>Koans</h1><p><a href="http://rubykoans.com/">Ruby Koans</a></p>
+
+</div>
+<div class='slide '>
+<h1>Intro To Rails</h1><ul>
+	<li>Rails is a framework for building and deploying web applications</li>
+	<li>It&#8217;s structured using an architecture called MVC: Model-View-Controller</li>
+	<li>MVC separates different kinds of application logic into sections based on what it&#8217;s used for. In Rails, these live in separate folders.</li>
+	<li>Rails values &#8220;convention over configuration&#8221;&#8212;the platform will make certain assumptions about how you&#8217;re going to build your application. This makes tasks that suit Rails&#8217; conventions very easy, but actions that don&#8217;t follow these conventions will take more work.</li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>An Example Rails App</h1><p>To get started:</p>
+<ol>
+	<li>Go to the microrant directory</li>
+	<li>Type <code>bundle install</code></li>
+	<li>Then type <code>rails server</code></li>
+	<li>Open <a href="http://localhost:3000">http://localhost:3000</a> in your web browser</li>
+</ol>
+
+</div>
+<div class='slide '>
+<h1>Microrant</h1><ul>
+	<li>Twitter? Never heard of it.</li>
+	<li>10 characters to express your anger</li>
+	<li>Basic activities: create, read, update, delete (CRUD)</li>
+	<li>Go to http://localhost:3000/users/new to create a new user with your name</li>
+	<li>Then go to /rants/new and create a new rant
+	<ul>
+		<li>Rants can also be edited and deleted&#8212;give it a try!</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>What&#8217;s behind the curtain?
+	<ul>
+		<li>Rails provides classes that allow us to retrieve and manipulate data easily</li>
+		<li>Logic for the application is written in normal Ruby, and a module called ActiveRecord does all of the database connection work for you</li>
+	</ul></li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>Behind the Scenes: the database</h1></div>
+<div class='slide '>
+<h1>At The Console</h1><ul>
+	<li>Close down the Rails server with Ctrl-C</li>
+	<li>Run <code>rails console</code></li>
+	<li>You can modify the data using <code>Rant</code> and <code>User</code> classes</li>
+	<li>The <code>User</code> class has <code>id</code> and <code>name</code> attributes</li>
+	<li>The <code>Rant</code> class has <code>id</code>, <code>message</code>, and <code>user_id</code> attributes</li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>At The Console</h1><p>How can we look up a rant after it&#8217;s been created?</p>
+<pre><code>r = Rant.find(1)
+r.message
+r.user_id</code></pre>
+<p>What about modifying a rant?</p>
+<pre><code>r.message = "RANTING!"
+r.save</code></pre>
+<p>We need to <code>save</code> the changes when we&#8217;re done editing.</p>
+
+</div>
+<div class='slide '>
+<h1>Where&#8217;s My Stuff</h1><p>Rails models have built-in finder methods that help you retrieve records from the database.</p>
+<p>Try:</p>
+<ul>
+	<li><code>Rant.all</code></li>
+	<li><code>Rant.first</code></li>
+	<li><code>Rant.find(:all, :user_id =&gt; 1)</code></li>
+	<li><code>Rant.all(:user_id =&gt; 1)</code></li>
+	<li><code>Rant.find_by_user_id(1)</code></li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>At the Console</h1><p>Let&#8217;s try creating a new Rant, for <code>user_id</code> 1</p>
+<pre><code>user = User.find(1)
+rant = user.rants.build
+rant.message = "WHAT IS TH"
+rant.save</code></pre>
+<p>Note that we didn&#8217;t need to set the <code>id</code> field of the message!
+That was automatically set by <code>new</code>.</p>
+<p>We <code>save</code> the record when we&#8217;re done, in order to create it, just like when we were editing a rant before.</p>
+
+</div>
+<div class='slide '>
+<h1>At The Console</h1><p>Creating a rant that way was verbose. Is there a better way?</p>
+<p><code>User.find(1).rants.create(:message =&gt; "E POINT!?")</code></p>
+<p>Notice that you don&#8217;t need to save when you use <code>create</code>&#8212;it combines <code>new</code> and <code>save</code> into a single action.</p>
+
+</div>
+<div class='slide '>
+<h1>Looking at models</h1><p>Open up the user.rb and rant.rb model files.</p>
+<pre><code>class Rant &lt; ActiveRecord::Base</code>
+
+<code>  belongs_to :user</code>
+
+<code>  validates_presence_of :user, :message
+  validates_length_of :message, :maximum =&gt; 10</code>
+
+<code>end</code>
+
+<code>class User &lt; ActiveRecord::Base</code>
+
+<code>  has_many :rants</code>
+  
+<code>  validates_presence_of :name</code>
+
+<code>end</code></pre>
+
+</div>
+<div class='slide '>
+<h1>Exercises</h1><p>Some people are writing in lowercase! This won&#8217;t do!</p>
+<p>Let&#8217;s write a method that can convert all lowercase rants to uppercase. First, go find the rant.rb file in your Rails models directory.</p>
+<pre><code>class Rant &lt; ActiveRecord::Base
+before_save :convert_message_to_uppercase
+def convert_message_to_uppercase
+  ...</code></pre>
+<p>Rails provides many extensions to Ruby classes to make common tasks easier. Look in <a href="http://api.rubyonrails.org/classes/ActiveSupport/Multibyte/Chars.html">http://api.rubyonrails.org/classes/ActiveSupport/Multibyte/Chars.html</a> to find the helper you need for this exercise.</p>
+<p>Once you&#8217;ve added the code, try creating a lowercase rant and see what happens.</p>
+
+</div>
+<div class='slide '>
+<h1>Exercises</h1><p>Sometimes you want to work with your data in a different format. Go back to the Rails console and write a program that creates a hash that contains rant messages paired with user names.</p>
+<p>How do you create a new Hash again?</p>
+<ul>
+	<li>Earlier we saw <code>Hash.new</code>, but <code>{}</code> is a simpler way.</li>
+	<li>Try <code>new_hash = {}</code></li>
+</ul>
+<p>The result should look like:</p>
+<pre><code>=&gt; {"RANTING!"=&gt;"caylee", "WTF"=&gt;"audrey"}</code></pre>
+<p>Can you use an iterator to print this out as a series of formatted strings?</p>
+
+</div>
+<div class='slide '>
+<h1>Callbacks</h1><p>The <code>before_save</code> code we wrote earlier uses a <strong>callback</strong>. Rails defines several callbacks that allow you to change the input to a model before or after actions like save, create, update, and delete.</p>
+<pre><code>before_save :geocode_address
+after_create :notify_admins
+before_validate :check_over_some_other_details</code></pre>
+
+</div>
+<div class='slide '>
+<h1>Quality Control</h1><p>Validations provide an easy wrapper for checking that a particular attribute is present, in the right format, or other requirements before the application will save the data. The microblog application already contains some of these. Look at the Rant and User models to see the ones we&#8217;ve included.</p>
+<p>Can you think of other validations you&#8217;d like to add? Try changing the length of a valid Rant message.</p>
+
+</div>
+<div class='slide '>
+<h1>Displaying the data</h1><p>Rails will automatically create views with content when you use the <code>scaffold</code> command. Go to /app/views and have a look around.</p>
+<p>These files are making use of a templating system called ERB that converts Ruby statements in the view into static HTML to display. A typical ERB statement might look like:</p>
+<p>Documentation on ERB syntax: <a href="http://ruby-doc.org/stdlib/libdoc/erb/rdoc/classes/ERB.html">http://ruby-doc.org/stdlib/libdoc/erb/rdoc/classes/ERB.html</a></p>
+
+</div>
+<div class='slide '>
+<h1>Exercises</h1><p>The scaffolding system is quick to use, but not always pretty. Our list of rants lists the <code>user_id</code> for the person who said it, and not their name. Let&#8217;s change that.</p>
+<p>Go to /app/views/rants/ and open the index.html file. By default, the scaffolder makes the index view show a list of all records of the related model&#8217;s type. Find the line that displays the user id and change it to show the user&#8217;s name instead.</p>
+
+</div>
+<div class='slide '>
+<h1>Exercises</h1><p>On the users index page, let&#8217;s add a column to the table to show how many rants each person has written. ActiveRecord makes this easy by providing a method called <code>count</code> that you can add to a collection of records to get the database count instead of the full records. For example, <code>User.count</code> or <code>Rants.count</code>.</p>
+<p>These also work through has_many associations, so given a particular user record, you could try <code>user.kittens.count</code> or <code>user.books.count</code> (if those associations existed) or &#8230;</p>
+
+</div>
+<div class='slide '>
+<h1>Routes</h1><p>How does Rails know what page to go to when you visit <a href="http://localhost:3000/rants/new">http://localhost:3000/rants/new</a> ?</p>
+<p>Open /config/routes.rb to see how this works.</p>
+
+</div>
+<div class='slide '>
+<h1>What about the C in MVC?</h1><p>Now that we&#8217;ve seen and edited models and views, let&#8217;s take a quick look at the controller files in our project.</p>
+<p>What does a controller do?</p>
+<ul>
+	<li>It connects the view and the model, calling methods on the models to get the data needed for the view, and allowing you to access input parameters, such as those from a form.</li>
+	<li>It responds to the HTTP request from the browser, and renders the requested type of output (in our scaffolds, this is html or xml, but other things like json can easily be added&#8212;instant API!)</li>
+	<li>The controller is also where you would add access control, like only allowing the user who wrote the rant to delete it.</li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>Making Your Own</h1><ul>
+	<li>Exit <code>microrant</code> directory</li>
+	<li>Run <code>rails new betterrant</code></li>
+	<li>Enter the betterrant directory and run:</li>
+</ul>
+<pre><code>bundle install
+rails generate scaffold User name:string
+rails generate scaffold Rant user_id:integer message:string
+rake db:migrate</code></pre>
+<p>At this point you can start the server and take a look around.</p>
+
+</div>
+<div class='slide '>
+<h1>Summary</h1><ul>
+	<li>We&#8217;ve reviewed the basics of the Ruby language
+	<ul>
+		<li>For a refresher, <a href="http://tryruby.org/">Try Ruby</a> is a browser based overview of Ruby</li>
+		<li>Ruby has a number of simple types of data such as strings, numbers, arrays, and hashes</li>
+		<li>Most computations in Ruby are handled by methods.</li>
+		<li>A class is a template for creating objects that bundles data and methods</li>
+		<li>Classes can be extended as new needs arise</li>
+	</ul></li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>Summary</h1><ul>
+	<li>We&#8217;ve covered a small Rails application: microrants
+	<ul>
+		<li>A good next tutorial is <a href="http://railsforzombies.org/">Rails For Zombies</a></li>
+		<li>More detail can be found in the <a href="http://guides.rubyonrails.org/">Ruby Guides</a></li>
+		<li>ActiveRecord allows us to manipulate our persistent data like normal objects</li>
+		<li>.erb files allow us to intergrate Ruby code with html</li>
+		<li>Scaffolding gives a way of automating the start of a Rails project</li>
+	</ul></li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>Next Steps</h1><ul>
+	<li>Try to make betterrant match or improve upon microrant</li>
+	<li>Get involved in the local Ruby <a href="http://pdxruby.org/">user group</a></li>
+	<li>Start coming to <a href="http://codeandsplode.org/">Code-n-Splode</a></li>
+</ul>
+
+</div>
+<div class='slide '>
+<h1>Stepping outside</h1></div>
+
+
+  </div> <!-- presentation -->
+</body>
+</html> 
+
