@@ -2,7 +2,8 @@ class Rant < ActiveRecord::Base
 
   belongs_to :user
 
-  validates_presence_of :user, :message
-  validates_length_of :message, :maximum => 10
+  validates :user, :presence => true
+  validates :message, :presence => true, :length => { :maximum => 10 }
+  #validates :message, :length => { :within => 1..10 }
 
 end
